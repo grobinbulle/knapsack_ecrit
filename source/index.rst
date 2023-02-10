@@ -4,7 +4,7 @@
     contain the root `toctree` directive.
     
 
-Programmation dynamique
+Problème du Sac à dos
 =======================
 
 ..  toctree::
