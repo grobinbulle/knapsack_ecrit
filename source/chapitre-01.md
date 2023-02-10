@@ -4,7 +4,7 @@ Le problème du sac à dos fait partie des 21 problèmes NP-complets créés par
 
 ```{figure} figures/ill_pdsd.jpg
 ---
-width: 100%
+width: 50%
 align : center
 ---
 Illustration du problème du sac à dos
@@ -24,7 +24,7 @@ Objet = i, Volume de l’objet = Vi , Prix de l’objet = Pi
 Exemple de tableau 
 ```{figure} figures/tableau_sacdos.jpg
 ---
-width: 100%
+width: 50%
 align : center
 ---
 ```
@@ -50,7 +50,7 @@ Il est possible que l’on souhaite obtenir la meilleure solution, que l’on ne
 Pour illustrer ce principe, il est possible de raisonner par un “arbre de recherche”. Il est composé de nœuds, représentés par des cercles, et représentent l’objet que l’on évalue. Les nœuds situés sur la même ligne correspondent au même objet. On passe à l’objet suivant par des flèches. Si l’on prend l’objet dans le sac, on indique X=1 sur celle-ci, si l’on ne le prend pas, on lui indique X=0. Chaque objet possède ainsi 2 flèches qui partent de ce dernier. Lorsque l’on arrive au dernier objet, on calcule la somme des volumes ajoutés ainsi que celle des prix ajoutés, puis on en tire la solution optimale ne dépassant pas la limite de volume. 
 ```{figure} figures/arbre_rech.jpg
 ---
-width: 100%
+width: 50%
 align : center
 ---
 Arbre de recherche
