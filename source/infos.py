@@ -1,15 +1,15 @@
 class DocumentInfos:
 
-    title = u'Programmation dynamique'
-    first_name = 'Cédric'
-    last_name = 'Donner'
+    title = u'Problème du sac à dos'
+    first_name = 'Robin'
+    last_name = 'Gachet'
     author = f'{first_name} {last_name}'
-    year = u'2022'
-    month = u'Juillet'
-    seminary_title = u'Algorithmes et structures de données II'
+    year = u'2023'
+    month = u'Février'
+    seminary_title = u'Travail Personnel'
     tutor = u"Cédric Donner"
-    release = "(Version finale)"
-    repository_url = "https://github.com/donnerc/prog-dynamique"
+    release = "(Version intermédiaire)"
+    repository_url = "https://github.com/grobinbulle/knapsack_ecrit.git"
 
     @classmethod
     def date(cls):
