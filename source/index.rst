@@ -11,10 +11,10 @@ Problème du Sac à dos
     :maxdepth: 2
     :caption: Table des matières
 
-    introduction.md
+    introduction_sad.md
     chapitre-01.md
     chapitre-02.md
-    conclusion.md
+    conclusion_sad.md
     sources.md
 
 ..

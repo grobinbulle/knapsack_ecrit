@@ -42,7 +42,7 @@ Tout en ayant la somme XiPi maximale.
 
 Le problème étant posé, il peut être intéressant de s’attarder sur les différentes méthodes de résolutions du problème. 
 
-## Méthodes de résolutions
+## Méthodes de résolution
 Il existe ainsi plusieurs méthodes de résolution différentes. Cependant, elles possèdent toutes certains avantages mais aussi certains inconvénients. Il est ici question de les énumérer, les expliquer ainsi que de souligner leurs points forts et leurs points faibles. 
 ### Méthode exacte
 Il est possible que l’on souhaite obtenir la meilleure solution, que l’on ne puisse pas obtenir mieux. La méthode exacte, ou par la force brute, consiste tout simplement à l’énumération de toutes les possibilités d’arrangement, pour en sélectionner la meilleure. 
@@ -81,15 +81,3 @@ Cette méthode est intéressante car elle apporte un gain de temps conséquent. 
 Néanmoins, il est impossible d’utiliser cette démarche lorsque l’on désir obtenir l’arrangement le plus efficace. Pour ajouter à cela, bien qu’il soit possible de l’effectuer quand on ne peut ajouter qu’un seul exemplaire de l’objet, il devient de plus en plus ardu de démarcher de la sorte. 
 
 Sur les nombreux algorithmes basés sur la méthode heuristique, l’algorithme glouton demeure comme l’un des plus populaire. C’est pourquoi je m’attarde sur ce dernier dans le prochain chapitre de ce travail. 
-
-#### Algorithme Glouton
-Comme évoqué dans la section précédente, l’algorithme glouton (ou greedy) appartient à la catégorie des méthodes heuristiques et ne garantit aucunement d’obtenir la bonne réponse. L’algorithme glouton a pour but de choisir la meilleure solution localement. Il procède ici étape par étape. En d’autres termes, si l’on trie les objets par ordre décroissant, l’algorithme contrôle cas après cas si l’objet analysé peut être accepté. Si c’est le cas, l’objet rejoint virtuellement le sac à dos, sinon, il ne le rejoint pas et le programme passe à l’objet suivant. 
-
-Pour illustrer le fonctionnement du programme, il peut être intéressant de s’attarder un exemple concret : Le but est de réaliser le parcours qui, en additionnant les valeurs traversées, nous donne le plus grand résultat total. En réalisant le problème à la main sans algorithme (cf. Figure 1), on réalise qu’il faut d’abord choisir le parcours vert, passant par la case 6, 3, puis 59. 
-```{figure} figures/arbre_rech.jpg
----
-width: 100%
-align : center
----
-Arbre de recherche
-```
