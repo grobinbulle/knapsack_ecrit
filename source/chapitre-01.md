@@ -24,7 +24,7 @@ Objet = i, Volume de l’objet = Vi , Prix de l’objet = Pi
 Exemple de tableau 
 ```{figure} figures/tableau_sacdos.jpg
 ---
-width: 50%
+width: 70%
 align : center
 ---
 ```

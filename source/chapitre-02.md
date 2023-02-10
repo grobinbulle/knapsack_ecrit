@@ -21,7 +21,7 @@ Chemin choisi par l’algorithme glouton, ne menant pas à la réponse optimale
 Dans le cadre du problème du sac à dos, il est possible d’appliquer le même raisonnement en triant les objets par ordre décroissant selon leur rapport Pi /Vi, puis regarder si l’on peut rajouter chaque objet en fonction de leur volume et du volume restant dans le sac. 
 ```{figure} figures/arbre_glouton.jpg
 ---
-width: 50%
+width: 70%
 align : center
 ---
 Chemin choisi par l’algorithme glouton, ne menant pas à la réponse optimale  
