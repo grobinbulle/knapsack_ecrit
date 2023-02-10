@@ -11,11 +11,11 @@ Programmation dynamique
     :maxdepth: 2
     :caption: Table des matières
 
-    introduction.rst
-    01-fibonacci.rst
-    knapsack-dp.rst
-    conclusion.rst
-    references.rst
+    introduction.md
+    chapitre-01.md
+    chapitre-02.md
+    conclusion.md
+    sources.md
 
 ..
     ..  toctree::
