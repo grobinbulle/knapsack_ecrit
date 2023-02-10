@@ -55,5 +55,41 @@ align : center
 ---
 Arbre de recherche
 ```
+Sur ce schéma, les nœuds finaux rouges symbolisent que la solution dépasse le quota autorisé et qu’elle n’est donc pas possible, tandis que le nœud bleu indique que la solution est réalisable. On y inscrit la somme des prix des objets. 
 
+Par conséquent, cette méthode permet d’obtenir la meilleure méthode, ce qui n’est pas négligeable. Cependant, le développement et les calculs à effectués augmentent de manière exponentielle lorsque l’on applique ce raisonnement sur plus en plus d’objets. Ainsi, la tache peut prendre temps effroyable et augmente aussi le risque d’erreurs de calcul si une âme inconsciente se motive à évaluer ce problème à la main. Sur le plan informatique, cette méthode est d’une complexité O(n^2), ce qui exécrable. Ainsi, le coût machine les rend souvent moins pertinentes surtout lorsqu’il s’agit de condition à respecter telles que le temps de réponse d’une machine. 
 
+De plus, il peut être utile d’avoir des bornes afin d'optimiser le programme : 
+
+- Borne inférieure : valeur nécessairement inférieure à la valeur de la meilleure solution possible 
+
+- Borne supérieure : valeur maximale, valeur de la meilleure solution réalisable et inférieure à la somme de tous les objets 
+
+Ainsi, si les valeurs sont hors bornes, on abandonne la piste. On peut donc aussi changer les bornes si l'on rencontre une valeur minimale ou maximale.
+
+### Méthode approchée/heuristique
+La première méthode, dite “approchée” ou “heuristique”, permet d’obtenir une “bonne” solution tout en proposant une certaine économie de temps lors des calculs. Elle consiste en 3 étapes : 
+
+1) Calculer le rapport entre le prix et le volume de chaque objet : Pi /Vi 
+
+2) Trier par ordre décroissant les résultats obtenus. 
+
+3) Sélectionner les objets dans l’ordre du tri et les ajouter tant que le volume maximal n’est pas dépassé. Si un objet ne peut pas être ajouté, passer au prochain jusqu’à atteindre ou se rapprocher au maximum du quota autorisé 
+
+Cette méthode est intéressante car elle apporte un gain de temps conséquent. De plus, elle permet d’avoir une solution acceptable. Enfin, elle semble aisément compréhensible et ne présente que peu de risques d’erreurs de calcul si l’on résout le problème à la main. 
+
+Néanmoins, il est impossible d’utiliser cette démarche lorsque l’on désir obtenir l’arrangement le plus efficace. Pour ajouter à cela, bien qu’il soit possible de l’effectuer quand on ne peut ajouter qu’un seul exemplaire de l’objet, il devient de plus en plus ardu de démarcher de la sorte. 
+
+Sur les nombreux algorithmes basés sur la méthode heuristique, l’algorithme glouton demeure comme l’un des plus populaire. C’est pourquoi je m’attarde sur ce dernier dans le prochain chapitre de ce travail. 
+
+#### Algorithme Glouton
+Comme évoqué dans la section précédente, l’algorithme glouton (ou greedy) appartient à la catégorie des méthodes heuristiques et ne garantit aucunement d’obtenir la bonne réponse. L’algorithme glouton a pour but de choisir la meilleure solution localement. Il procède ici étape par étape. En d’autres termes, si l’on trie les objets par ordre décroissant, l’algorithme contrôle cas après cas si l’objet analysé peut être accepté. Si c’est le cas, l’objet rejoint virtuellement le sac à dos, sinon, il ne le rejoint pas et le programme passe à l’objet suivant. 
+
+Pour illustrer le fonctionnement du programme, il peut être intéressant de s’attarder un exemple concret : Le but est de réaliser le parcours qui, en additionnant les valeurs traversées, nous donne le plus grand résultat total. En réalisant le problème à la main sans algorithme (cf. Figure 1), on réalise qu’il faut d’abord choisir le parcours vert, passant par la case 6, 3, puis 59. 
+```{figure} figures/arbre_rech.jpg
+---
+width: 100%
+align : center
+---
+Arbre de recherche
+```
