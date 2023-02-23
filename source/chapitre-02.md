@@ -41,9 +41,9 @@ def algo_glouton(poids, valeurs, capacite):
             valeur_totale += valeurs[i] 
     return valeur_totale
 ```
-Cette implémentation prend trois entrées : poids et valeurs, qui sont des listes des poids et des valeurs des articles, et capacite, qui est le poids maximal que le sac à dos peut contenir. 
+Cette implémentation prend trois entrées : `poids` et `valeurs`, qui sont des listes des poids et des valeurs des articles, et `capacite`, qui est le poids maximal que le sac à dos peut contenir. 
 
-L'algorithme commence par créer une liste des indices des articles, triés par ordre décroissant de leur rapport valeur/poids. Cela est fait en utilisant la fonction sorted avec un paramètre key qui spécifie les critères de tri. 
+L'algorithme commence par créer une liste des indices des articles, triés par ordre décroissant de leur rapport valeur/poids. Cela est fait en utilisant la fonction `sorted` avec un paramètre `key` qui spécifie les critères de tri. 
 
 Ensuite, l'algorithme boucle à travers la liste triée des articles et ajoute chaque article au sac à dos s'il ne dépasse pas la capacité. La boucle continue jusqu'à ce que la capacité soit atteinte ou que tous les articles aient été considérés. 
 
@@ -55,19 +55,8 @@ Cette implémentation est un algorithme glouton car elle sélectionne les articl
 
 La complexité de cet algorithme glouton dépend de la complexité de l'opération de tri et de la boucle qui parcourt la liste triée. 
 
-La fonction sorted a une complexité de temps de O(n log n), où n est le nombre d'éléments à trier. 
+La fonction `sorted` a une complexité de temps de O(n log n), où n est le nombre d'éléments à trier. 
 
 Ensuite, la boucle qui parcourt la liste triée a une complexité de temps de O(n), car elle doit parcourir tous les éléments de la liste triée. 
 
 Ainsi, la complexité de temps totale de cet algorithme glouton est O(n log n) pour la fonction de tri et O(n) pour la boucle, soit une complexité totale de O(n log n) pour le pire des cas. 
-
-Il convient de noter que cette complexité de temps ne prend pas en compte le temps nécessaire pour initialiser les listes de poids et de valeurs. La complexité de temps de cette étape dépend de la manière dont les listes sont créées et du nombre d'éléments qu'elles contiennent.
-### Analyse du code et compléxité
-Ainsi, la complexité de l’algorithme sur une liste d’objet triés est de O(n). Si la liste n’est pas triée, la complexité est alors O(log(n)). 
-
-RESTE A COMPLETER
-
-
-
-
-
