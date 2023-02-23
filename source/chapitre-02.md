@@ -43,7 +43,7 @@ def algo_glouton(poids, valeurs, capacite):
 ```
 Cette implémentation prend trois entrées : `poids` et `valeurs`, qui sont des listes des poids et des valeurs des articles, et `capacite`, qui est le poids maximal que le sac à dos peut contenir. 
 
-L'algorithme commence par créer une liste des indices des articles, triés par ordre décroissant de leur rapport valeur/poids. Cela est fait en utilisant la fonction `sorted` avec un paramètre `key` qui spécifie les critères de tri. 
+L'algorithme commence par créer une liste des indices des différents articles, triés par ordre décroissant de leur rapport valeur/poids. Cela est fait en utilisant la fonction `sorted` avec un paramètre `key` qui spécifie les critères de tri. 
 
 Ensuite, l'algorithme boucle à travers la liste triée des articles et ajoute chaque article au sac à dos s'il ne dépasse pas la capacité. La boucle continue jusqu'à ce que la capacité soit atteinte ou que tous les articles aient été considérés. 
 
