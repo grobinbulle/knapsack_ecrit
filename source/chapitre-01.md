@@ -29,16 +29,16 @@ align : center
 ---
 ```
 Variable X : 
+X = 1 si l’objet est dans le sac
+X = 0 si l’objet n’est pas dans le sac
 
-X = 1 si l’objet est dans le sac 
-
-X = 0 si l’objet n’est pas dans le sac 
 
 Contrainte : Somme des volumes Vi < ou = volume max V 
 
 => X1V1 + X2V2 + X3V3 + X4V4 < ou = V 
 
 Tout en ayant la somme XiPi maximale. 
+
 
 Le problème étant posé, il peut être intéressant de s’attarder sur les différentes méthodes de résolutions du problème. 
 
