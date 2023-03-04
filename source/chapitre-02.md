@@ -10,7 +10,7 @@ align : center
 ---
 Chemin choisi manuellement, menant à la réponse optimale 
 ```
-Le programme, quant à lui, prend des décisions localement (cf. Figure 2). Ainsi, lors du choix entre les cases 3 et 7, ce dernier choisira la plus grande valeur, le 7, sans prendre compte de ce qui adviendra derrière. Par conséquent, en empruntant le chemin rouge en appliquant cette logique, la solution optimale n’est pas atteinte. Cependant, le résultat obtenu reste tout de même une solution acceptable étant donné l’économie de mémoire que l’on peut faire si le problème se complexifie. 
+Le programme, quant à lui, prend des décisions localement (cf. Figure 2). Ainsi, lors du choix entre les cases 3 et 7, ce dernier choisira la plus grande valeur, le 7, sans tenir compte de ce qui adviendra par la suite. Par conséquent, en empruntant le chemin rouge en appliquant cette logique, la solution optimale n’est pas atteinte. Cependant, le résultat obtenu reste tout de même une solution acceptable étant donné l’économie de temps que l’on peut faire si le problème se complexifie. 
 ```{figure} figures/arbre_rouge.jpg
 ---
 width: 50%
@@ -18,7 +18,7 @@ align : center
 ---
 Chemin choisi par l’algorithme glouton, ne menant pas à la réponse optimale  
 ```
-Dans le cadre du problème du sac à dos, il est possible d’appliquer le même raisonnement en triant les objets par ordre décroissant selon leur rapport Pi /Vi, puis regarder si l’on peut rajouter chaque objet en fonction de leur volume et du volume restant dans le sac. 
+Dans le cadre du problème du sac à dos, il est possible d’appliquer le même raisonnement en triant les objets par ordre décroissant selon leur rapport Pi /Vi, puis regarder si l’on peut rajouter chaque objet en fonction de son volume et du volume restant dans le sac. 
 ```{figure} figures/arbre_glouton.jpg
 ---
 width: 70%
@@ -49,7 +49,7 @@ Ensuite, l'algorithme boucle à travers la liste triée des articles et ajoute c
 
 Enfin, l'algorithme renvoie la valeur totale des articles dans le sac à dos. 
 
-Cette implémentation est un algorithme glouton car elle sélectionne les articles dans l'ordre décroissant du rapport valeur/poids, sans tenir compte de l'impact global sur la capacité du sac à dos ou des valeurs et des poids des autres articles qui pourraient être ajoutés plus tard. Cette approche peut produire des solutions sous-optimales, mais elle peut être rapide et simple à mettre en œuvre. 
+Cette implémentation est un algorithme glouton car elle sélectionne les articles dans l'ordre décroissant du rapport valeur/poids, sans tenir compte de l'impact global sur la capacité du sac à dos ou des valeurs et des poids des autres articles qui pourraient être ajoutés plus tard. Cette approche peut produire des solutions sous-optimales, mais elle est rapide et simple à mettre en œuvre. 
 
 ### Complexité 
 

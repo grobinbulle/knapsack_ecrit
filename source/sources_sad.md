@@ -1,5 +1,7 @@
 # Sources
 ## Sources textuelles
+RICHARD M. KARP, « Reducibility Among Combinatorial Problems », dans Raymond E. Miller et James W. Thatcher, Complexity of Computer Computations, Plenum, 1972, p. 85-103, consulté le 26 décembre 2022.
+
 INTERSTICES, initiation au problème du sac à dos : <https://interstices.info/le-probleme-du-sac-a-dos/>, consulté le 26 décembre 2022. 
 
 WIKIPEDIA, initiation au problème du sac à dos : <https://fr.wikipedia.org/wiki/Probl%C3%A8me_du_sac_%C3%A0_dos>, consulté le 26 décembre 2022. 

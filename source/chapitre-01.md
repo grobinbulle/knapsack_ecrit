@@ -1,6 +1,6 @@
 # Présentation du problème 
 
-Le problème du sac à dos fait partie des 21 problèmes NP-complets créés par le mathématicien Richard Karp. Son principe est relativement simple. En effet, la mission consiste à remplir un sac avec une contrainte (comme un volume maximum) ainsi qu’une autre valeur (comme le prix, le poids, etc.) que l’on cherche à optimiser. Pour généraliser, on souhaite obtenir la plus grande valeur possible tout en ne dépassant pas le quota du sac. Dans l’exemple en Figure 1, on souhaite optimiser le prix total des objets ajoutés sans dépasser le poids maximal que peut contenir le sac. 
+Le problème du sac à dos fait partie des 21 problèmes NP-complets montrés par le mathématicien Richard Karp. Son principe est relativement simple. En effet, la mission consiste à remplir un sac avec une contrainte (comme un volume maximum) ainsi qu’une autre valeur (comme le prix, le poids, etc.) que l’on cherche à optimiser. Pour généraliser, on souhaite obtenir la plus grande valeur possible tout en ne dépassant pas le quota du sac. Dans l’exemple en Figure 1, on souhaite optimiser le prix total des objets ajoutés sans dépasser le poids maximal que peut contenir le sac. 
 
 ```{figure} figures/ill_pdsd.jpg
 ---
@@ -9,7 +9,7 @@ align : center
 ---
 Illustration du problème du sac à dos
 ```
-Ce problème concerne de nombreux domaines dans notre société. En cryptographie, il est à l’origine du premier algorithme de chiffrement asymétrique alors que c’est aussi un problème récurrence dans le domaine financier lorsqu’il s’agit d’élaborer un budget afin de choisir celui qui rapporte le plus. Pour donner un exemple que la plupart d’entre nous avons vécu, il se passe le même phénomène lorsque l’on doit remplir une valise en utilisant le plus de place sans dépasser le poids maximal autorisé par la compagnie aérienne. C’est notamment par ce principe facile à assimiler que ce problème se présente comme l’un des plus populaire du monde informatique, un univers semblant très complexe pour des non-initiés. 
+Ce problème concerne de nombreux domaines dans notre société. En cryptographie, il est à l’origine du premier algorithme de chiffrement asymétrique, alors que c’est aussi un problème récurrent dans le domaine financier lorsqu’il s’agit d’élaborer un budget afin de choisir celui qui rapporte le plus. Pour donner un exemple que la plupart d’entre nous avons vécu, il se passe le même phénomène lorsque l’on doit remplir une valise en utilisant le plus de place sans dépasser le poids maximal autorisé par la compagnie aérienne. C’est notamment par ce principe facile à assimiler que ce problème se présente comme l’un des plus populaires du monde informatique. 
 
 Prenons pour exemple un sac possédant un volume maximal. On souhaite y insérer les objets présentant le prix total le plus élevé. Ainsi, il est possible de formuler le problème mathématiquement de cette manière : 
 
@@ -32,22 +32,20 @@ Variable X :
 X = 1 si l’objet est dans le sac
 X = 0 si l’objet n’est pas dans le sac
 
-
 Contrainte : Somme des volumes Vi < ou = volume max V 
 
 => X1V1 + X2V2 + X3V3 + X4V4 < ou = V 
 
-Tout en ayant la somme XiPi maximale. 
-
+Tout en ayant la somme XiPi maximale.  
 
 Le problème étant posé, il peut être intéressant de s’attarder sur les différentes méthodes de résolutions du problème. 
 
 ## Méthodes de résolution
-Il existe ainsi plusieurs méthodes de résolution différentes. Cependant, elles possèdent toutes certains avantages mais aussi certains inconvénients. Il est ici question de les énumérer, les expliquer ainsi que de souligner leurs points forts et leurs points faibles. 
+Il existe ainsi plusieurs méthodes de résolution différentes. Cependant, elles possèdent toutes certains avantages et inconvénients. Il est ici question de les énumérer, de les expliquer ainsi que de souligner leurs points forts et leurs points faibles. 
 ### Méthode exacte
-Il est possible que l’on souhaite obtenir la meilleure solution, que l’on ne puisse pas obtenir mieux. La méthode exacte, ou par la force brute, consiste tout simplement à l’énumération de toutes les possibilités d’arrangement, pour en sélectionner la meilleure. 
+Il est possible que l’on souhaite obtenir la meilleure solution, que l’on ne puisse pas obtenir mieux. La méthode exacte, ou par la force brute, consiste tout simplement à énumérer de toutes les possibilités d’arrangement, pour sélectionner la meilleure. 
 
-Pour illustrer ce principe, il est possible de raisonner par un “arbre de recherche”. Il est composé de nœuds, représentés par des cercles, et représentent l’objet que l’on évalue. Les nœuds situés sur la même ligne correspondent au même objet. On passe à l’objet suivant par des flèches. Si l’on prend l’objet dans le sac, on indique X=1 sur celle-ci, si l’on ne le prend pas, on lui indique X=0. Chaque objet possède ainsi 2 flèches qui partent de ce dernier. Lorsque l’on arrive au dernier objet, on calcule la somme des volumes ajoutés ainsi que celle des prix ajoutés, puis on en tire la solution optimale ne dépassant pas la limite de volume. 
+Pour illustrer ce principe, il est possible de raisonner par un arbre de recherche. Il est composé de nœuds, représentés par des cercles, qui représentent l’objet que l’on évalue. Les nœuds situés sur la même ligne correspondent au même objet. On passe à l’objet suivant par des arêtes. Si l’on prend l’objet dans le sac, on indique X=1 sur l'arête en question, si l’on ne le prend pas, on lui indique X=0. Chaque objet possède ainsi 2 flèches qui partent de ce dernier. Lorsque l’on arrive au dernier objet, on calcule la somme des volumes ajoutés ainsi que celle des prix ajoutés, puis on en tire la solution optimale ne dépassant pas la limite de volume. 
 ```{figure} figures/arbre_rech.jpg
 ---
 width: 50%
@@ -55,15 +53,15 @@ align : center
 ---
 Arbre de recherche
 ```
-Sur ce schéma, les nœuds finaux rouges symbolisent que la solution dépasse le quota autorisé et qu’elle n’est donc pas possible, tandis que le nœud bleu indique que la solution est réalisable. On y inscrit la somme des prix des objets. 
+Sur ce schéma, les feuilles rouges symbolisent que la solution dépasse le quota autorisé et qu’elle n’est donc pas possible, tandis que le nœud bleu indique que la solution est réalisable. On y inscrit la somme des prix des objets. 
 
-Par conséquent, cette méthode permet d’obtenir la meilleure méthode, ce qui n’est pas négligeable. Cependant, le développement et les calculs à effectués augmentent de manière exponentielle lorsque l’on applique ce raisonnement sur plus en plus d’objets. Ainsi, la tache peut prendre temps effroyable et augmente aussi le risque d’erreurs de calcul si une âme inconsciente se motive à évaluer ce problème à la main. Sur le plan informatique, cette méthode est d’une complexité O(n^2), ce qui exécrable. Ainsi, le coût machine les rend souvent moins pertinentes surtout lorsqu’il s’agit de condition à respecter telles que le temps de réponse d’une machine. 
+Par conséquent, cette méthode permet d’obtenir la meilleure solution, ce qui n’est pas négligeable. Cependant, le développement et les calculs à effectuer augmentent de manière exponentielle lorsque l’on applique ce raisonnement sur un nombre élevé d'objets. Ainsi, la tâche peut prendre un temps effroyable et augmente aussi le risque d’erreurs de calcul si une âme inconsciente se motive à évaluer ce problème à la main. Sur le plan informatique, cette méthode est d’une complexité O(n^2), ce qu'il faut éviter. Ainsi, leur longueur les rend souvent moins pertinentes surtout lorsqu’il s’agit de condition à respecter telles que le temps de réponse d’une machine. 
 
 De plus, il peut être utile d’avoir des bornes afin d'optimiser le programme : 
 
-- Borne inférieure : valeur nécessairement inférieure à la valeur de la meilleure solution possible 
+- Borne inférieure : valeur inférieure ou égale à la valeur de la meilleure solution possible. 
 
-- Borne supérieure : valeur maximale, valeur de la meilleure solution réalisable et inférieure à la somme de tous les objets 
+- Borne supérieure : valeur maximale, valeur de la meilleure solution réalisable jusqu'à présent.
 
 Ainsi, si les valeurs sont hors bornes, on abandonne la piste. On peut donc aussi changer les bornes si l'on rencontre une valeur minimale ou maximale.
 
