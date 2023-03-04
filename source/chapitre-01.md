@@ -15,11 +15,14 @@ Prenons pour exemple un sac possédant un volume maximal. On souhaite y insérer
 
 ## Formulation mathématique 
 
-Volume max. = V 
 
-Nbre d’objets = n 
-
-Objet = i, Volume de l’objet = Vi , Prix de l’objet = Pi 
+```{math}
+    Volume\ max. = V \\
+    Nbre\ d’objets = n \\ 
+    Objet = i\\
+    Volume\ de\ l’objet = V_{i} \\
+    Prix\ de\ l’objet = P_{i}
+```
 
 Exemple de tableau 
 ```{figure} figures/tableau_sacdos.jpg
@@ -28,15 +31,25 @@ width: 70%
 align : center
 ---
 ```
-Variable X : 
-X = 1 si l’objet est dans le sac
-X = 0 si l’objet n’est pas dans le sac
+
+```{math}
+    Variable\ X:
+    \left\{
+        \begin{array}{ll}
+            X = 1 \ si \ l’objet\ est\ dans\ le\ sac\\
+            X = 0 \ si \ l’objet\ n’est\ pas\ dans\ le\ sac
+        \end{array}
+    \right.
+```
 
 Contrainte : Somme des volumes Vi < ou = volume max V 
-
-=> X1V1 + X2V2 + X3V3 + X4V4 < ou = V 
-
-Tout en ayant la somme XiPi maximale.  
+```{math}
+    Contrainte\ : 
+    \sum_{i=1}^{n} V_{i} < V_{max} \\
+    Dans\ l'exemple\ : X_{1}V_{1} + X_{2}V_{2} + X_{3}V_{3} + X_{4}V_{4} \leq V \\
+    Tout\ en\ ayant \sum_{i=1}^{n} X_{i}V_{i}\ maximale\\
+    
+```  
 
 Le problème étant posé, il peut être intéressant de s’attarder sur les différentes méthodes de résolutions du problème. 
 
