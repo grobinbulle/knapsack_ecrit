@@ -1,8 +1,10 @@
 # Algorithme Glouton
 ## Présentation
+```{math}
+``` 
 Comme évoqué dans la section précédente, l’algorithme glouton (ou greedy) appartient à la catégorie des méthodes heuristiques et ne garantit aucunement d’obtenir la bonne réponse. L’algorithme glouton a pour but de choisir la meilleure solution localement. Il procède ici étape par étape. En d’autres termes, si l’on trie les objets par ordre décroissant, l’algorithme contrôle cas après cas si l’objet analysé peut être accepté. Si c’est le cas, l’objet rejoint virtuellement le sac à dos, sinon, il ne le rejoint pas et le programme passe à l’objet suivant. 
 
-Pour illustrer le fonctionnement du programme, il peut être intéressant de s’attarder un exemple concret : Le but est de réaliser le parcours qui, en additionnant les valeurs traversées, nous donne le plus grand résultat total. En réalisant le problème à la main sans algorithme (cf. Figure 1), on réalise qu’il faut d’abord choisir le parcours vert, passant par la case 6, 3, puis 59. 
+Pour illustrer le fonctionnement du programme, il peut être intéressant de s’attarder un exemple concret : Le but est de réaliser le parcours qui, en additionnant les valeurs traversées, nous donne le plus grand prix total. En réalisant le problème à la main sans algorithme (cf. Figure 1), on réalise qu’il faut d’abord choisir le parcours vert, passant par la case 6, 3, puis 59. 
 ```{figure} figures/arbre_vert.jpg
 ---
 width: 50%
@@ -18,7 +20,7 @@ align : center
 ---
 Chemin choisi par l’algorithme glouton, ne menant pas à la réponse optimale  
 ```
-Dans le cadre du problème du sac à dos, il est possible d’appliquer le même raisonnement en triant les objets par ordre décroissant selon leur rapport Pi /Vi, puis regarder si l’on peut rajouter chaque objet en fonction de son volume et du volume restant dans le sac. 
+Dans le cadre du problème du sac à dos, il est possible d’appliquer le même raisonnement en triant les objets par ordre décroissant selon leur rapport prix/volume de chaque objet, puis regarder si l’on peut rajouter chaque objet en fonction de son volume et du volume restant dans le sac. 
 ```{figure} figures/arbre_glouton.jpg
 ---
 width: 70%
@@ -26,7 +28,7 @@ align : center
 ---
 Chemin choisi par l’algorithme glouton, ne menant pas à la réponse optimale  
 ```
-Dans l’exemple en figure 3, Il est possible de remarquer que les objets ont été triés dans l’ordre décroissant de leur valeur. L’algorithme ajoute l’objet 1 car son volume (=2) est inférieur au volume restant du sac (=8). Cependant, il ne peut pas accepter l’objet 2 car son volume (=7) est désormais supérieur au volume restant (=8-2=6) et son ajout à l’objet 1 dépasserait la capacité maximale du sac. Néanmoins, il est possible d’ajouter l’objet 3 car son volume (=5) peut être additionné à celui de l’objet 1 sans dépasser le quota (8-(2+5)=1). Ainsi, en additionnant les prix des objets ajoutés est de 33, pour un volume total de 7 ne dépassant pas le quota maximal. Dans cet exemple, il s’agit de la meilleure solution. 
+Dans l’exemple en figure 3, Il est possible de remarquer que les objets ont été triés dans l’ordre décroissant de leur valeur. L’algorithme ajoute l’objet 1 car son volume $$V_{i} = 2$$ est inférieur au volume restant du sac $$V=8$$. Cependant, il ne peut pas accepter l’objet 2 car son volume $$V_{i} = 7$$ est désormais supérieur au volume restant $$V =8-2=6$$ et son ajout à l’objet 1 dépasserait la capacité maximale du sac. Néanmoins, il est possible d’ajouter l’objet 3 car son volume $$V_{i} = 5$$ peut être additionné à celui de l’objet 1 sans dépasser le quota $$V = (8-(2+5)=1)$$ Ainsi, $$P = \sum_{i=1}^{n} Prix_{i} = 33$$ pour un volume total$$V = \sum_{i=1}^{n} V_{i} = 7$$  ne dépassant pas le quota maximal. Dans cet exemple, il s’agit de la meilleure solution. 
 ##  Résolution du problème par l’algorithme glouton 
 Le problème peut ainsi être résolu par le code python ci-dessous :
 
@@ -55,8 +57,8 @@ Cette implémentation est un algorithme glouton car elle sélectionne les articl
 
 La complexité de cet algorithme glouton dépend de la complexité de l'opération de tri et de la boucle qui parcourt la liste triée. 
 
-La fonction `sorted` a une complexité de temps de O(n log n), où n est le nombre d'éléments à trier. 
+La fonction `sorted` a une complexité de temps de $$O(n log(n))\ | \ n = nombre \ élément \ à \ trier$$
 
-Ensuite, la boucle qui parcourt la liste triée a une complexité de temps de O(n), car elle doit parcourir tous les éléments de la liste triée. 
+Ensuite, la boucle qui parcourt la liste triée a une complexité de temps de $$O(n)$$ car elle doit parcourir tous les éléments de la liste triée. 
 
-Ainsi, la complexité de temps totale de cet algorithme glouton est O(n log n) pour la fonction de tri et O(n) pour la boucle, soit une complexité totale de O(n log n) pour le pire des cas. 
+Ainsi, la complexité de temps totale de cet algorithme glouton est $$O(n log(n))$$ pour la fonction de tri et $$O(n)$$ pour la boucle, soit une complexité totale de $$O(n log (n))$$ pour le pire des cas. 

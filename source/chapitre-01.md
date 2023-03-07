@@ -42,7 +42,6 @@ align : center
     \right.
 ```
 
-Contrainte : Somme des volumes Vi < ou = volume max V 
 ```{math}
     Contrainte\ : 
     \sum_{i=1}^{n} V_{i} < V_{max} \\
@@ -58,7 +57,7 @@ Il existe ainsi plusieurs méthodes de résolution différentes. Cependant, elle
 ### Méthode exacte
 Il est possible que l’on souhaite obtenir la meilleure solution, que l’on ne puisse pas obtenir mieux. La méthode exacte, ou par la force brute, consiste tout simplement à énumérer de toutes les possibilités d’arrangement, pour sélectionner la meilleure. 
 
-Pour illustrer ce principe, il est possible de raisonner par un arbre de recherche. Il est composé de nœuds, représentés par des cercles, qui représentent l’objet que l’on évalue. Les nœuds situés sur la même ligne correspondent au même objet. On passe à l’objet suivant par des arêtes. Si l’on prend l’objet dans le sac, on indique X=1 sur l'arête en question, si l’on ne le prend pas, on lui indique X=0. Chaque objet possède ainsi 2 flèches qui partent de ce dernier. Lorsque l’on arrive au dernier objet, on calcule la somme des volumes ajoutés ainsi que celle des prix ajoutés, puis on en tire la solution optimale ne dépassant pas la limite de volume. 
+Pour illustrer ce principe, il est possible de raisonner par un arbre de recherche. Il est composé de nœuds, représentés par des cercles, qui représentent l’objet que l’on évalue. Les nœuds situés sur la même ligne correspondent au même objet. On passe à l’objet suivant par des arêtes. Si l’on prend l’objet dans le sac, on indique $$X = 1$$ sur l'arête en question, si l’on ne le prend pas, on lui indique $$X=0$$. Chaque objet possède ainsi 2 flèches qui partent de ce dernier. Lorsque l’on arrive au dernier objet, on calcule la somme des volumes ajoutés ainsi que celle des prix ajoutés, puis on en tire la solution optimale ne dépassant pas la limite de volume. 
 ```{figure} figures/arbre_rech.jpg
 ---
 width: 50%
@@ -68,7 +67,7 @@ Arbre de recherche
 ```
 Sur ce schéma, les feuilles rouges symbolisent que la solution dépasse le quota autorisé et qu’elle n’est donc pas possible, tandis que le nœud bleu indique que la solution est réalisable. On y inscrit la somme des prix des objets. 
 
-Par conséquent, cette méthode permet d’obtenir la meilleure solution, ce qui n’est pas négligeable. Cependant, le développement et les calculs à effectuer augmentent de manière exponentielle lorsque l’on applique ce raisonnement sur un nombre élevé d'objets. Ainsi, la tâche peut prendre un temps effroyable et augmente aussi le risque d’erreurs de calcul si une âme inconsciente se motive à évaluer ce problème à la main. Sur le plan informatique, cette méthode est d’une complexité O(n^2), ce qu'il faut éviter. Ainsi, leur longueur les rend souvent moins pertinentes surtout lorsqu’il s’agit de condition à respecter telles que le temps de réponse d’une machine. 
+Par conséquent, cette méthode permet d’obtenir la meilleure solution, ce qui n’est pas négligeable. Cependant, le développement et les calculs à effectuer augmentent de manière exponentielle lorsque l’on applique ce raisonnement sur un nombre élevé d'objets. Ainsi, la tâche peut prendre un temps effroyable et augmente aussi le risque d’erreurs de calcul si une âme inconsciente se motive à évaluer ce problème à la main. Sur le plan informatique, cette méthode est d’une complexité $$O(n^2)$$, ce qu'il faut éviter. Ainsi, leur longueur les rend souvent moins pertinentes surtout lorsqu’il s’agit de condition à respecter telles que le temps de réponse d’une machine. 
 
 De plus, il peut être utile d’avoir des bornes afin d'optimiser le programme : 
 
@@ -81,7 +80,7 @@ Ainsi, si les valeurs sont hors bornes, on abandonne la piste. On peut donc auss
 ### Méthode approchée/heuristique
 La première méthode, dite “approchée” ou “heuristique”, permet d’obtenir une “bonne” solution tout en proposant une certaine économie de temps lors des calculs. Elle consiste en 3 étapes : 
 
-1) Calculer le rapport entre le prix et le volume de chaque objet : Pi /Vi 
+1) Calculer le rapport entre le prix et le volume de chaque objet : $$P_{i} /V_{i}$$ 
 
 2) Trier par ordre décroissant les résultats obtenus. 
 
