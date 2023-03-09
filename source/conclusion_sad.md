@@ -1,4 +1,4 @@
 # Conclusion
 Ainsi, le problème du sac à dos se présente comme une introduction particulièrement enfantine aux problèmes d'optimisation. Néanmoins, lorsque l'on approfondit les recherches à ce sujet, les différentes méthodes évoquées offrent de nombreuses possibilités de résolutions, présentant chacune leurs avantages et leurs inconvénients. 
-Par conséquent, l'algorithme glouton, considéré comme une méthode approchée, permet d'obtenir une solution satisfaisante mais pas optimale. Cependant, il se distingue de la méthode exacte par le faible espace qu'il occupe dans la mémoire vive ainsi que par sa rapidité d'exécution. 
+Par conséquent, l'algorithme glouton, considéré comme une méthode approchée, permet d'obtenir une solution satisfaisante mais pas optimale. Cependant, il se distingue de la méthode exacte par sa rapidité d'exécution. 
 Ce travail m'a donc permis de m'intéresser à un tout autre domaine de l'informatique que celui étudié lors de mon travail de maturité, à savoir les technologies du web. Je me suis ainsi rendu compte qu'un travail plus théorique, tel que ce projet personnel, correspond davantage à ma manière de travailler qu'un projet pratique.
