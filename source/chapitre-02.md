@@ -7,7 +7,7 @@ Comme évoqué dans la section précédente, l’algorithme glouton (ou greedy) 
 Pour illustrer le fonctionnement du programme, il peut être intéressant de s’attarder un exemple concret, plus simplifié que le sac à dos : le but est de réaliser le parcours qui, en additionnant les valeurs traversées, nous donne la plus grande somme totale, tout cela sans aucune contrainte ou quota. En réalisant le problème à la main sans algorithme (cf. Figure 3), on réalise qu’il faut d’abord choisir le parcours vert, passant par le nœud 6, 3, puis 59. 
 
 ```{warning}
-Il est important de noter que chaque nœud des exemples en figure 3 et 4 représente un objet différent : l'objet de le nœud 3 n'est pas le même que l'objet de le nœud 7. Dans le problème du sac à dos (cf. figure 5), au contraire, les nœuds d'une même ligne représentent le même objet.
+Il est important de noter que chaque nœud des exemples en figure 3 et 4 représente un objet différent : l'objet du nœud 3 n'est pas le même que l'objet du nœud 7. Dans le problème du sac à dos (cf. figure 5), au contraire, les nœuds d'une même ligne représentent le même objet.
 ```
 
 ```{figure} figures/arbre_vert.jpg
@@ -32,7 +32,7 @@ Dans le cadre du problème du sac à dos, il est possible d’appliquer le même
 width: 70%
 align : center
 ---
-Chemin choisi par l’algorithme glouton, ne menant pas à la réponse optimale  
+Chemin choisi par l’algorithme glouton  
 ```
 Représentation des objets sous forme de tableau :
 | #objet | 1 | 2 | 3 |
@@ -69,9 +69,9 @@ Cette implémentation est un algorithme glouton car elle sélectionne les articl
 
 La complexité de cet algorithme glouton dépend de la complexité de l'opération de tri et de la boucle qui parcourt la liste triée. 
 
-La fonction `sorted` a une complexité de temps de $$O(n log(n))\ | \ n = nombre \ élément \ à \ trier$$
+La fonction `sorted` a une complexité de temps de $$O(n log(n))\ , \ n = nombre \ élément \ à \ trier$$
 
 Ensuite, la boucle qui parcourt la liste triée a une complexité de temps de $$O(n)$$ car elle doit parcourir tous les éléments de la liste triée. 
 
-Ainsi, la complexité de temps totale de cet algorithme glouton est $$O(n log(n))$$ pour la fonction de tri et $$O(n)$$ pour la boucle, soit une complexité totale de $$O(n log (n))$$. 
+Ainsi, la complexité de temps totale de cet algorithme glouton est $$O(n log(n))$$ pour la fonction de tri et $$O(n)$$ pour la boucle, soit une complexité totale de $$O(n log (n))$$
 Cependant, si l'on considère un algorithme glouton récursif capable de revenir en arrière pour explorer les diverses branches, dans le pire des cas, la complexité de cet algorithme est exponentielle, c'est-à-dire qu'elle dépend de la taille de l'entrée et augmente rapidement avec le nombre d'objets à considérer. Cette complexité est due au fait que, dans certains cas, l'algorithme peut prendre une mauvaise décision à un moment donné, ce qui le conduit à explorer une branche de l'arbre de recherche qui ne contient pas la solution optimale. En conséquence, l'algorithme peut potentiellement examiner toutes les combinaisons possibles d'objets à placer dans le sac, ce qui donne une complexité exponentielle $$ O(2^{n})$$.
