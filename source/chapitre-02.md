@@ -2,7 +2,7 @@
 ## Présentation
 ```{math}
 ``` 
-Comme évoqué dans la section précédente, l’algorithme glouton (ou greedy) appartient à la catégorie des méthodes heuristiques et ne garantit aucunement d’obtenir la bonne réponse. L’algorithme glouton a pour but de choisir la meilleure solution localement. Il procède ici étape par étape. En d’autres termes, si l’on trie les objets par ordre décroissant, l’algorithme contrôle cas après cas si l’objet analysé peut être accepté. Si c’est le cas, l’objet rejoint définitivement le sac à dos, sinon, il ne le rejoint pas et le programme passe à l’objet suivant. 
+Comme évoqué dans la section précédente, l’algorithme glouton (ou greedy) appartient à la catégorie des méthodes approchées, est considéré comme une méthode heuristique et ne garantit aucunement d’obtenir la bonne réponse. L’algorithme glouton a pour but de choisir la meilleure solution localement. Il procède ici étape par étape. En d’autres termes, si l’on trie les objets par ordre décroissant, l’algorithme contrôle cas après cas si l’objet analysé peut être accepté. Si c’est le cas, l’objet rejoint définitivement le sac à dos, sinon, il ne le rejoint pas et le programme passe à l’objet suivant. 
 
 Pour illustrer le fonctionnement du programme, il peut être intéressant de s’attarder un exemple concret, plus simplifié que le sac à dos : le but est de réaliser le parcours qui, en additionnant les valeurs traversées, nous donne la plus grande somme totale, tout cela sans aucune contrainte ou quota. En réalisant le problème à la main sans algorithme (cf. Figure 3), on réalise qu’il faut d’abord choisir le parcours vert, passant par le nœud 6, 3, puis 59. 
 
@@ -75,3 +75,8 @@ Ensuite, la boucle qui parcourt la liste triée a une complexité de temps de $$
 
 Ainsi, la complexité de temps totale de cet algorithme glouton est $$O(n log(n))$$ pour la fonction de tri et $$O(n)$$ pour la boucle, soit une complexité totale de $$O(n log (n))$$
 Cependant, si l'on considère un algorithme glouton récursif capable de revenir en arrière pour explorer les diverses branches, dans le pire des cas, la complexité de cet algorithme est exponentielle, c'est-à-dire qu'elle dépend de la taille de l'entrée et augmente rapidement avec le nombre d'objets à considérer. Cette complexité est due au fait que, dans certains cas, l'algorithme peut prendre une mauvaise décision à un moment donné, ce qui le conduit à explorer une branche de l'arbre de recherche qui ne contient pas la solution optimale. En conséquence, l'algorithme peut potentiellement examiner toutes les combinaisons possibles d'objets à placer dans le sac, ce qui donne une complexité exponentielle $$ O(2^{n})$$.
+
+## Autres méthode approchées
+L'algorithme glouton n'est pas l'unique méthode approchée. En effet, si l'on s'attarde sur les autres manières approchées de résoudre le problème, on peut évoquer les algorithmes génitiques et ceux basés sur les colonies de fourmies.
+### Algorithme génétique
+### Algorithme basé sur les colonies de fourmies

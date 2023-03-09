@@ -82,8 +82,8 @@ De plus, il peut être utile d’avoir des bornes afin d'optimiser le programme 
 
 Ainsi, si les valeurs sont hors bornes, on abandonne la piste. On peut donc aussi changer les bornes si l'on rencontre une valeur minimale ou maximale.
 
-### Méthode approchée/heuristique
-La première méthode, dite “approchée” ou “heuristique”, permet d’obtenir une “bonne” solution tout en proposant une certaine économie de temps lors des calculs. Elle consiste en 3 étapes : 
+### Méthode approchée
+La première méthode, dite “approchée”, permet d’obtenir une “bonne” solution tout en proposant une certaine économie de temps lors des calculs. Elle consiste en 3 étapes : 
 
 1) Calculer le rapport entre le prix et le volume de chaque objet : $$P_{i} /V_{i}$$ 
 
@@ -95,4 +95,4 @@ Cette méthode est intéressante car elle apporte un gain de temps conséquent. 
 
 Néanmoins, il est impossible d’utiliser cette démarche lorsque l’on désir obtenir l’arrangement le plus efficace. Pour ajouter à cela, bien qu’il soit possible de l’effectuer quand on ne peut ajouter qu’un seul exemplaire de l’objet, il devient de plus en plus ardu de démarcher de la sorte. 
 
-Sur les nombreux algorithmes basés sur la méthode heuristique, l’algorithme glouton demeure comme l’un des plus populaire. C’est pourquoi je m’attarde sur ce dernier dans le prochain chapitre de ce travail. 
+Sur les nombreux algorithmes basés sur la méthode approchée, l’algorithme glouton demeure comme l’un des plus populaire. C’est pourquoi je m’attarde sur ce dernier dans le prochain chapitre de ce travail. 
