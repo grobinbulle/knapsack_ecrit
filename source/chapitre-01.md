@@ -83,7 +83,7 @@ De plus, il peut être utile d’avoir des bornes afin d'optimiser le programme 
 Ainsi, si les valeurs sont hors bornes, on abandonne la piste. On peut donc aussi changer les bornes si l'on rencontre une valeur minimale ou maximale.
 
 Cette méthode explore ainsi $$ 2^{n}$$ chemins différents. Ainsi, si l'on s'intéresse à problème contenant 10 objets, on aura : $$2^{10} = 1'024 \ combinaisons$$
-Pour un problème de 20 objets, on aura : $$ 2^{20} = 1'048'576 \ combinaisons $$
+Pour un problème de 20 objets, on aura : $$ 2^{20} = 1'048'576 \ combinaisons $$ Le nombre de combinaisons augmente ainsi exponentiellement. Il semble dès lors évident que cette méthode prend énormement de temps si l'on s'intéresse à de nombreux objets.
 
 ### Méthode approchée
 La première méthode, dite “approchée”, permet d’obtenir une “bonne” solution tout en proposant une certaine économie de temps lors des calculs. Elle consiste en 3 étapes : 
