@@ -1,6 +1,6 @@
 # Présentation du problème 
 
-Le problème du sac à dos fait partie des 21 problèmes NP-complets montrés par le mathématicien Richard Karp. Son principe est relativement simple. En effet, la mission consiste à remplir un sac avec une contrainte (comme un volume maximum) ainsi qu’une autre valeur (comme le prix, le poids, etc.) que l’on cherche à optimiser. Pour généraliser, on souhaite obtenir la plus grande valeur possible tout en ne dépassant pas le quota du sac. Dans l’exemple en Figure 1, on souhaite optimiser le prix total des objets ajoutés sans dépasser le poids maximal que peut contenir le sac. 
+Le problème du sac à dos fait partie des 21 problèmes NP-complets montrés par le mathématicien Richard Karp dans son article « Reducibility Among Combinatorial Problems », publié en 1972. Son principe est relativement simple. En effet, la mission consiste à remplir un sac avec une contrainte (comme un volume maximum) ainsi qu’une autre valeur (comme le prix, le poids, etc.) que l’on cherche à optimiser. Pour généraliser, on souhaite obtenir la plus grande valeur possible tout en ne dépassant pas le quota du sac. Dans l’exemple en Figure 1, on souhaite optimiser le prix total des objets ajoutés sans dépasser le poids maximal que peut contenir le sac. 
 
 ```{figure} figures/ill_pdsd.jpg
 ---

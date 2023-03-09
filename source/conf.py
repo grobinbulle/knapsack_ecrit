@@ -43,12 +43,12 @@ extensions = [
     #"sphinxcontrib.spelling",
     "sphinxcontrib.bibtex",
     "sphinx.ext.graphviz",
-    "sphinx_proof"
-    
+    "sphinx_proof",
+    'sphinxcontrib.bibtex'   
 ]
 
 # BibTeX 
-bibtex_bibfiles = ['books.bib', 'online.bib', 'articles.bib']
+bibtex_bibfiles = ['books.bib', 'online.bib', 'articles.bib', 'refs.bib']
 
 # spelling_lang='en_US'
 spelling_lang = "fr_FR"
