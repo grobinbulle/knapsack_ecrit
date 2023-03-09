@@ -17,7 +17,7 @@ align : center
 ---
 Chemin choisi manuellement, menant à la réponse optimale 
 ```
-Le programme, quant à lui, prend des décisions localement (cf. Figure 4). Ainsi, lors du choix entre les nœuds 3 et 7, ce dernier choisira la plus grande valeur, le 7, sans tenir compte de ce qui adviendra par la suite. Par conséquent, en empruntant le chemin rouge en appliquant cette logique, la solution optimale n’est pas atteinte. Cependant, le résultat obtenu reste tout de même une solution acceptable étant donné l’économie de temps que l’on peut faire par rapport à la méthode par la  si le problème se complexifie par l'ajout de plusieurs objets. 
+Le programme, quant à lui, prend des décisions localement (cf. Figure 4). Ainsi, lors du choix entre les nœuds 3 et 7, ce dernier choisira la plus grande valeur, le 7, sans tenir compte de ce qui adviendra par la suite. Par conséquent, en empruntant le chemin rouge en appliquant cette logique, la solution optimale n’est pas atteinte. Cependant, le résultat obtenu reste tout de même une solution acceptable étant donné l’économie de temps que l’on peut faire par rapport à la méthode "force brute" si le problème se complexifie par l'ajout de plusieurs objets. 
 ```{figure} figures/arbre_rouge.jpg
 ---
 width: 50%
