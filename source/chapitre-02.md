@@ -2,7 +2,7 @@
 ## Présentation
 ```{math}
 ``` 
-Comme évoqué dans la section précédente, l’algorithme glouton (ou greedy) appartient à la catégorie des méthodes approchées, est considéré comme une méthode heuristique et ne garantit aucunement d’obtenir la bonne réponse. L’algorithme glouton a pour but de choisir la meilleure solution localement. Il procède ici étape par étape. En d’autres termes, si l’on trie les objets par ordre décroissant, l’algorithme contrôle cas après cas si l’objet analysé peut être accepté. Si c’est le cas, l’objet rejoint définitivement le sac à dos, sinon, il ne le rejoint pas et le programme passe à l’objet suivant. 
+Comme évoqué dans la section précédente, l’algorithme glouton (ou greedy) appartient à la catégorie des méthodes approchées, ou heuristiques, et ne garantit aucunement d’obtenir la bonne réponse. L’algorithme glouton a pour but de choisir la meilleure solution localement. Il procède ici étape par étape. En d’autres termes, si l’on trie les objets par ordre décroissant, l’algorithme contrôle cas après cas si l’objet analysé peut être accepté. Si c’est le cas, l’objet rejoint définitivement le sac à dos, sinon, il ne le rejoint pas et le programme passe à l’objet suivant. 
 
 Pour illustrer le fonctionnement du programme, il peut être intéressant de s’attarder un exemple concret, plus simplifié que le sac à dos : le but est de réaliser le parcours qui, en additionnant les valeurs traversées, nous donne la plus grande somme totale, tout cela sans aucune contrainte ou quota. En réalisant le problème à la main sans algorithme (cf. Figure 3), on réalise qu’il faut d’abord choisir le parcours vert, passant par le nœud 6, 3, puis 59. 
 
@@ -96,3 +96,23 @@ Il fonctionne de la manière suivante :
 6) Répétition : On répète les étapes 3 à 5 jusqu'à ce qu'une condition d'arrêt, telle qu'un nombre maximal d'itération ou un temps maximal, soit atteinte. On retourne ensuite la meilleure solution obtenue.
 
 ### Algorithme basé sur les colonies de fourmies
+
+L'algorithme basé sur les colonies de fourmis est une technique d'optimisation heuristique inspirée du comportement des fourmis. Cette méthode peut être appliquée pour résoudre des problèmes d'optimisation combinatoire tels que le problème du sac à dos.
+
+L'algorithme basé sur les colonies de fourmis pour le problème du sac à dos fonctionne de la manière suivante :
+
+1) Initialisation : On commence par générer une population de fourmis artificielles, qui représentent les solutions candidates. Chaque fourmi commence avec une solution vide et se déplace dans l'espace des solutions pour construire une solution candidate.
+
+2) Construction de la solution : Chaque fourmi construit sa solution en utilisant une règle de transition stochastique. Cette règle permet à la fourmi de choisir un objet à ajouter à la solution en fonction de sa valeur et de son poids. Les objets les plus rentables ont une probabilité plus élevée d'être choisis, mais les objets plus lourds ont une probabilité plus faible.
+
+3) Évaluation de la solution : Une fois que la fourmi a ajouté un objet à sa solution, celle-ci est évaluée pour voir si elle respecte la limite de poids du sac à dos. Si la limite est dépassée, la solution est invalidée.
+
+4) Mise à jour de la phéromone : Après que toutes les fourmis ont construit leur solution, la phéromone est mise à jour. Les fourmis déposent une quantité de phéromone proportionnelle à la qualité de leur solution. Les solutions de haute qualité reçoivent plus de phéromone.
+
+5) Évaporation de la phéromone : La phéromone déposée par les fourmis s'évapore avec le temps, de sorte que les pistes phéromonales les plus anciennes sont progressivement éliminées.
+
+6) Recherche locale : Après plusieurs cycles de construction de solutions et de mise à jour de la phéromone, une recherche locale est effectuée pour améliorer les solutions. Cette étape peut être effectuée en utilisant une méthode de recherche locale telle que la méthode de descente de gradient ou la méthode de recuit simulé.
+
+7) Condition d'arrêt : L'algorithme s'arrête lorsque les conditions d'arrêt prédéfinies sont atteintes, telles que le nombre maximal d'itérations, le temps de calcul maximal ou un critère de convergence.
+
+8) Récupération de la meilleure solution : La meilleure solution trouvée est retournée comme solution finale du problème.
