@@ -112,3 +112,10 @@ L'algorithme basé sur les colonies de fourmis pour le problème du sac à dos f
 5) Condition d'arrêt : L'algorithme s'arrête lorsque les conditions d'arrêt prédéfinies sont atteintes, telles que le nombre maximal d'itérations ou un temps de calcul maximal.
 
 6) Récupération de la meilleure solution : La meilleure solution trouvée est retournée comme solution finale du problème.
+```{figure} figures/antfrance.jpg
+---
+width: 50%
+align : center
+---
+Illustration d'un algorithme de colonies de fourmis cherchant à trouver le plus court chemin entre des villes françaises dans le cadre du problème du voyageur. TECHNO SCIENCE.NET
+```

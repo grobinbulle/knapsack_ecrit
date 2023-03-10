@@ -24,3 +24,5 @@ Technique et Science Informatiques, 2007, 3-4, 26, pp.371-390. ffhal-01542507f, 
 Figure 1 : COMPLEX SYSTEMS AI : <https://complex-systems-ai.com/problemes-industriels-et-reduction-polynomiale/probleme-du-sac-a-dos/>, consulté le 30 janvier 2023. 
 
 Figure 2 : INTERSTICES : <https://interstices.info/le-probleme-du-sac-a-dos/>, consulté le 26 décembre 2022.  
+
+Figure 6 : TECHNO-SCIENCE.NET : <https://www.techno-science.net/glossaire-definition/Algorithme-de-colonies-de-fourmis-page-3.html>, consulté le 10 mars 2023.
