@@ -101,18 +101,14 @@ L'algorithme basé sur les colonies de fourmis est une technique d'optimisation 
 
 L'algorithme basé sur les colonies de fourmis pour le problème du sac à dos fonctionne de la manière suivante :
 
-1) Initialisation : On commence par générer une population de fourmis artificielles, qui représentent les solutions candidates. Chaque fourmi commence avec une solution vide et se déplace dans l'espace des solutions pour construire une solution candidate.
+1) Initialisation : On commence par générer une population de fourmis artificielles, qui représentent les "constructeurs" des solutions candidates. Chaque fourmi commence avec une solution vide et se déplace dans l'espace des solutions pour créer une solution candidate selon une règle de transition stochastique. Cette règle permet à la fourmi de choisir un objet à ajouter à la solution en fonction de sa valeur et de son poids. Les objets les plus rentables ont une probabilité plus élevée d'être choisis, mais les objets plus lourds ont une probabilité plus faible.
 
-2) Construction de la solution : Chaque fourmi construit sa solution en utilisant une règle de transition stochastique. Cette règle permet à la fourmi de choisir un objet à ajouter à la solution en fonction de sa valeur et de son poids. Les objets les plus rentables ont une probabilité plus élevée d'être choisis, mais les objets plus lourds ont une probabilité plus faible.
+2) Évaluation de la solution : Une fois que la fourmi a ajouté un objet à sa solution, celle-ci est évaluée pour voir si elle respecte la limite de poids du sac à dos. Si la limite est dépassée, la solution est invalide.
 
-3) Évaluation de la solution : Une fois que la fourmi a ajouté un objet à sa solution, celle-ci est évaluée pour voir si elle respecte la limite de poids du sac à dos. Si la limite est dépassée, la solution est invalidée.
+3) Mise à jour de la phéromone : Après que toutes les fourmis ont construit leur solution, la phéromone est mise à jour. Les fourmis déposent une quantité de phéromone proportionnelle à la qualité de leur solution. Les solutions de haute qualité reçoivent plus de phéromone.
 
-4) Mise à jour de la phéromone : Après que toutes les fourmis ont construit leur solution, la phéromone est mise à jour. Les fourmis déposent une quantité de phéromone proportionnelle à la qualité de leur solution. Les solutions de haute qualité reçoivent plus de phéromone.
+4) Évaporation de la phéromone : La phéromone déposée par les fourmis s'évapore avec le temps, de sorte que les pistes phéromonales les plus anciennes, et donc meilleures, soient progressivement éliminées.
 
-5) Évaporation de la phéromone : La phéromone déposée par les fourmis s'évapore avec le temps, de sorte que les pistes phéromonales les plus anciennes sont progressivement éliminées.
+5) Condition d'arrêt : L'algorithme s'arrête lorsque les conditions d'arrêt prédéfinies sont atteintes, telles que le nombre maximal d'itérations ou un temps de calcul maximal.
 
-6) Recherche locale : Après plusieurs cycles de construction de solutions et de mise à jour de la phéromone, une recherche locale est effectuée pour améliorer les solutions. Cette étape peut être effectuée en utilisant une méthode de recherche locale telle que la méthode de descente de gradient ou la méthode de recuit simulé.
-
-7) Condition d'arrêt : L'algorithme s'arrête lorsque les conditions d'arrêt prédéfinies sont atteintes, telles que le nombre maximal d'itérations, le temps de calcul maximal ou un critère de convergence.
-
-8) Récupération de la meilleure solution : La meilleure solution trouvée est retournée comme solution finale du problème.
+6) Récupération de la meilleure solution : La meilleure solution trouvée est retournée comme solution finale du problème.
