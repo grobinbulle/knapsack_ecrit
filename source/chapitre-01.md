@@ -72,19 +72,12 @@ Arbre de recherche, INTERSTICES.INFO
 
 Sur ce schéma, les feuilles rouges symbolisent que la solution dépasse le quota autorisé et qu’elle n’est donc pas possible, tandis que le nœud bleu indique que la solution est réalisable. On y inscrit la somme des prix des objets. 
 
-Par conséquent, cette méthode permet d’obtenir la meilleure solution, ce qui n’est pas négligeable. Cependant, le développement et les calculs à effectuer augmentent de manière exponentielle lorsque l’on applique ce raisonnement sur un nombre élevé d'objets. Ainsi, la tâche peut prendre un temps effroyable et augmente aussi le risque d’erreurs de calcul si une âme inconsciente se motive à évaluer ce problème à la main. Sur le plan informatique, cette méthode est d’une complexité $$O(n^2)$$ ce qu'il faut éviter. Ainsi, leur longueur les rend souvent moins pertinentes surtout lorsqu’il s’agit de condition à respecter telles que le temps de réponse d’une machine. 
-
-De plus, il peut être utile d’avoir des bornes afin d'optimiser le programme : 
-
-- Borne inférieure : valeur inférieure ou égale à la valeur de la meilleure solution possible. 
-
-- Borne supérieure : valeur maximale, valeur de la meilleure solution réalisable jusqu'à présent.
-
-Ainsi, si les valeurs sont hors bornes, on abandonne la piste. On peut donc aussi changer les bornes si l'on rencontre une valeur minimale ou maximale.
+Par conséquent, cette méthode permet d’obtenir la meilleure solution, ce qui n’est pas négligeable. Cependant, le développement et les calculs à effectuer augmentent de manière exponentielle lorsque l’on applique ce raisonnement sur un nombre élevé d'objets. Ainsi, la tâche peut prendre un temps effroyable et augmente aussi le risque d’erreurs de calcul si une âme inconsciente se motive à évaluer ce problème à la main. Ainsi, leur longueur les rend souvent moins pertinentes surtout lorsqu’il s’agit de condition à respecter telles que le temps de réponse d’une machine. 
 
 Cette méthode explore ainsi $$ 2^{n}$$ chemins différents. Ainsi, si l'on s'intéresse à problème contenant 10 objets, on aura : $$2^{10} = 1'024 \ combinaisons$$
 Pour un problème de 20 objets, on aura : $$ 2^{20} = 1'048'576 \ combinaisons $$ Le nombre de combinaisons augmente ainsi exponentiellement. Il semble dès lors évident que cette méthode prend énormement de temps si l'on s'intéresse à de nombreux objets.
 
+Il peut être intéressant de s'appuyer sur le branch and bound afin de simplifier la recherche. En effet, son principe consiste en la subdivision de l'arbre puis en l'évaluation de la meilleure solution comprise dans la section étudiée. Uniquement cette dernière est stockée jusqu'à ce que l'on trouve une solution plus optimale, les autres sont directement éliminées. Cette méthode est donc pratique pour les problèmes de tailles conséquentes et permet tout de même d'atteindre la solution optimale. De plus, il n'y a donc pas besoin de stocker chaque méthode en mémoire, ce qui permet d'importantes économies. Là où la complexité de la méthode par la force brute atteint $$ O(2^{n}) $$ le branch and bound permet de réduire considérablement le temps de calcul et d'obtenir des solutions plus rapidement. Bien que la complexité de cette dernière méthode soit également exponentielle dans le pire des cas, elle est généralement beaucoup plus faible que celle de la méthode par force brute.
 ### Méthode approchée
 La première méthode, dite “approchée”, permet d’obtenir une “bonne” solution tout en proposant une certaine économie de temps lors des calculs. Elle consiste en 3 étapes : 
 
