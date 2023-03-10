@@ -11,7 +11,7 @@ Son principe est relativement simple. En effet, la mission consiste à remplir u
 width: 50%
 align : center
 ---
-Illustration du problème du sac à dos
+Illustration du problème du sac à dos, COMPLEX SYSTEMS AI
 ```
 
 Ce problème concerne de nombreux domaines dans notre société. En cryptographie, il est à l’origine du premier algorithme de chiffrement asymétrique, alors que c’est aussi un problème récurrent dans le domaine financier lorsqu’il s’agit d’élaborer un budget afin de choisir celui qui rapporte le plus. Pour donner un exemple que la plupart d’entre nous avons vécu, il se passe le même phénomène lorsque l’on doit remplir une valise en utilisant le plus de place sans dépasser le poids maximal autorisé par la compagnie aérienne. C’est notamment par ce principe facile à assimiler que ce problème se présente comme l’un des plus populaires du monde informatique. 
@@ -67,7 +67,7 @@ Pour illustrer ce principe, il est possible de raisonner par un arbre de recherc
 width: 50%
 align : center
 ---
-Arbre de recherche
+Arbre de recherche, INTERSTICES.INFO
 ```
 
 Sur ce schéma, les feuilles rouges symbolisent que la solution dépasse le quota autorisé et qu’elle n’est donc pas possible, tandis que le nœud bleu indique que la solution est réalisable. On y inscrit la somme des prix des objets. 
