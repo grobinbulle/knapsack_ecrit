@@ -76,7 +76,23 @@ Ensuite, la boucle qui parcourt la liste triée a une complexité de temps de $$
 Ainsi, la complexité de temps totale de cet algorithme glouton est $$O(n log(n))$$ pour la fonction de tri et $$O(n)$$ pour la boucle, soit une complexité totale de $$O(n log (n))$$
 Cependant, si l'on considère un algorithme glouton récursif capable de revenir en arrière pour explorer les diverses branches, dans le pire des cas, la complexité de cet algorithme est exponentielle, c'est-à-dire qu'elle dépend de la taille de l'entrée et augmente rapidement avec le nombre d'objets à considérer. Cette complexité est due au fait que, dans certains cas, l'algorithme peut prendre une mauvaise décision à un moment donné, ce qui le conduit à explorer une branche de l'arbre de recherche qui ne contient pas la solution optimale. En conséquence, l'algorithme peut potentiellement examiner toutes les combinaisons possibles d'objets à placer dans le sac, ce qui donne une complexité exponentielle $$ O(2^{n})$$.
 
-## Autres méthode approchées
+## Autres méthodes approchées
 L'algorithme glouton n'est pas l'unique méthode approchée. En effet, si l'on s'attarde sur les autres manières approchées de résoudre le problème, on peut évoquer les algorithmes génitiques et ceux basés sur les colonies de fourmies.
 ### Algorithme génétique
+L'algorithme génétique est une méthode d'optimisation qui simule le processus de sélection naturelle pour résoudre des problèmes d'optimisation. Il est souvent utilisé pour résoudre des problèmes d'optimisation combinatoire, tels que le problème du sac à dos.
+
+Il fonctionne de la manière suivante :
+
+1) Génération de la population initiale : On crée une population de solutions candidates. Chaque solution représente une sélection d'objets à potentiellement inclure dans le sac à dos. 
+
+2) Tri des solutions : On évalue chaque solution de la population en calculant la valeur totale des objets qu'elle contient et en vérifiant si elle respecte la limite de poids du sac à dos. Après cela, on sélectionne les meilleures solutions pour la prochaine génération de solution
+
+3) Combination : On combine certaines parties des solutions sélectionnées pour créer de nouvelles solutions candidates, constituant une nouvelle génération.
+
+4) Mutation : On applique une mutation, consistant en un échange de deux objets ou en l'ajout ou la suppression d'un objet, à certaines solutions de la population pour ajouter de la diversité. 
+
+5) Évaluation des solutions : On évalue les nouvelles solutions de la population.
+
+6) Répétition : On répète les étapes 3 à 5 jusqu'à ce qu'une condition d'arrêt, telle qu'un nombre maximal d'itération ou un temps maximal, soit atteinte. On retourne ensuite la meilleure solution obtenue.
+
 ### Algorithme basé sur les colonies de fourmies
