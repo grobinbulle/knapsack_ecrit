@@ -16,6 +16,10 @@ LGT SAINT-EXUPERY, information sur les algorithmes gloutons : <https://nsi4noobs
 
 TUTORIALSPOINT, sac à dos par algorithme glouton : <https://www.tutorialspoint.com/design_and_analysis_of_algorithms/design_and_analysis_of_algorithms_fractional_knapsack.htm>, consulté le 30 janvier 2023. 
 
+INES ALAYA, CHRISTINE SOLNON, KHALED GHEDIRA. Optimisation par colonies de fourmis pour le problème
+du sac-à-dos multi-dimensionnel. Revue des Sciences et Technologies de l’Information - Série TSI :
+Technique et Science Informatiques, 2007, 3-4, 26, pp.371-390. ffhal-01542507f, consulté le 10 mars 2023-
+
 ## Sources images
 Figure 1 : COMPLEX SYSTEMS AI : <https://complex-systems-ai.com/problemes-industriels-et-reduction-polynomiale/probleme-du-sac-a-dos/>, consulté le 30 janvier 2023. 
 
