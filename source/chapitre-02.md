@@ -73,8 +73,11 @@ La fonction `sorted` a une complexité de temps de $$O(n log(n))\ , \ n = nombre
 
 Ensuite, la boucle qui parcourt la liste triée a une complexité de temps de $$O(n)$$ car elle doit parcourir tous les éléments de la liste triée. 
 
-Ainsi, la complexité de temps totale de cet algorithme glouton est $$O(n log(n))$$ pour la fonction de tri et $$O(n)$$ pour la boucle, soit une complexité totale de $$O(n log (n))$$
-Cependant, si l'on considère un algorithme glouton récursif capable de revenir en arrière pour explorer les diverses branches, dans le pire des cas, la complexité de cet algorithme est exponentielle, c'est-à-dire qu'elle dépend de la taille de l'entrée et augmente rapidement avec le nombre d'objets à considérer. Cette complexité est due au fait que, dans certains cas, l'algorithme peut prendre une mauvaise décision à un moment donné, ce qui le conduit à explorer une branche de l'arbre de recherche qui ne contient pas la solution optimale. En conséquence, l'algorithme peut potentiellement examiner toutes les combinaisons possibles d'objets à placer dans le sac, ce qui donne une complexité exponentielle $$ O(2^{n})$$.
+La complexité de temps totale de cet algorithme glouton est $$O(n log(n))$$ pour la fonction de tri et $$O(n)$$ pour la boucle, soit une complexité totale de $$O(n log (n))$$
+
+Ainsi, l'algorithme glouton est plus rapide que l'algorithme par la force brute pour un nombre important d'objets. Néanmoins, pour un problème contenant peu d'objets, il se peut que la méthode gloutonne soit plus lente en raison de la complexité du tri initial des objets en fonction de leur rapport valeur/poids. 
+
+Dans un autre registre, si l'on souhaite améliorer cette méthode afin de trouver une meilleure solution, il peut être intéressant de s'attarder sur un algorithme glouton récursif capable de revenir en arrière pour explorer les diverses branches. Dans le pire des cas, la complexité de cet algorithme est exponentielle, c'est-à-dire qu'elle dépend de la taille de l'entrée et augmente rapidement avec le nombre d'objets à considérer. Cette complexité est due au fait que, dans certains cas, l'algorithme peut prendre une mauvaise décision à un moment donné, ce qui le conduit à explorer une branche de l'arbre de recherche qui ne contient pas la solution optimale. En conséquence, l'algorithme peut potentiellement examiner toutes les combinaisons possibles d'objets à placer dans le sac, ce qui donne une complexité exponentielle $$ O(2^{n})$$.
 
 ## Autres méthodes approchées
 L'algorithme glouton n'est pas l'unique méthode approchée. En effet, si l'on s'attarde sur les autres manières approchées de résoudre le problème, on peut évoquer les algorithmes génitiques et ceux basés sur les colonies de fourmies.
