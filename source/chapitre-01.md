@@ -70,7 +70,7 @@ align : center
 Arbre de recherche, INTERSTICES.INFO
 ```
 
-Sur ce schéma, les feuilles rouges symbolisent que la solution dépasse le quota autorisé et qu’elle n’est donc pas possible, tandis que le nœud bleu indique que la solution est réalisable. On y inscrit la somme des prix des objets. 
+Sur ce schéma, les nœuds rouges symbolisent que la solution dépasse le quota autorisé et qu’elle n’est donc pas possible, tandis que le nœud bleu indique que la solution est réalisable. On y inscrit la somme des prix des objets. 
 
 Par conséquent, cette méthode permet d’obtenir la meilleure solution, ce qui n’est pas négligeable. Cependant, le développement et les calculs à effectuer augmentent de manière exponentielle lorsque l’on applique ce raisonnement sur un nombre élevé d'objets. Ainsi, la tâche peut prendre un temps effroyable et augmente aussi le risque d’erreurs de calcul si une âme inconsciente se motive à évaluer ce problème à la main. Ainsi, leur longueur les rend souvent moins pertinentes surtout lorsqu’il s’agit de condition à respecter telles que le temps de réponse d’une machine. 
 
