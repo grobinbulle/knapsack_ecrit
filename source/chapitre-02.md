@@ -40,7 +40,8 @@ Représentation des objets sous forme de tableau :
 | Prix | 23 | 21 | 10 |
 | Poids | 2 | 7 | 5 |
 | Rapport prix/poids | 11.5 | 3 | 2 |
-Dans l’exemple en figure 3, l’algorithme ajoute l’objet 1 car son volume $$V_{i} = 2$$ est inférieur au volume restant du sac. $$V=8$$ Cependant, il ne peut pas accepter l’objet 2 car son volume $$V_{i} = 7$$ est désormais supérieur au volume restant $$V =8-2=6$$ et son ajout à l’objet 1 dépasserait la capacité maximale du sac. Néanmoins, il est possible d’ajouter l’objet 3 car son volume $$V_{i} = 5$$ peut être additionné à celui de l’objet 1 sans dépasser le quota $$V = (8-(2+5)=1)$$ Ainsi, $$P = \sum_{i=1}^{n} Prix_{i} = 33$$ pour un volume total$$V = \sum_{i=1}^{n} V_{i} = 7$$  ne dépassant pas le quota maximal. Dans cet exemple, il s’agit de la meilleure solution. 
+
+Dans l’exemple en figure 3, l’algorithme ajoute l’objet 1 car son volume $$ V_{i} = 2 $$ est inférieur au volume restant du sac. $$V=8$$ Cependant, il ne peut pas accepter l’objet 2 car son volume $$V_{i} = 7$$ est désormais supérieur au volume restant $$V =8-2=6$$ et son ajout à l’objet 1 dépasserait la capacité maximale du sac. Néanmoins, il est possible d’ajouter l’objet 3 car son volume $$V_{i} = 5$$ peut être additionné à celui de l’objet 1 sans dépasser le quota $$V = (8-(2+5)=1)$$ Ainsi, $$P = \sum_{i=1}^{n} Prix_{i} = 33$$ pour un volume total$$V = \sum_{i=1}^{n} V_{i} = 7$$  ne dépassant pas le quota maximal. Dans cet exemple, il s’agit de la meilleure solution. 
 ##  Résolution du problème par l’algorithme glouton 
 Le problème peut ainsi être résolu par le code python ci-dessous :
 
