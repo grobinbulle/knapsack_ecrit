@@ -20,6 +20,13 @@ Prenons pour exemple un sac possédant un volume maximal. On souhaite y insérer
 
 ## Formulation mathématique 
 
+Exemple de tableau 
+
+| #objet | 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- | --- |
+| Pi | 7 | 4 | 3 | 3 |
+| Vi | 13 | 12 | 8 | 10 |
+
 
 ```{math}
     Volume\ max. = V \\
@@ -28,13 +35,6 @@ Prenons pour exemple un sac possédant un volume maximal. On souhaite y insérer
     Volume\ de\ l’objet = V_{i} \\
     Prix\ de\ l’objet = P_{i}
 ```
-
-Exemple de tableau 
-
-| #objet | 1 | 2 | 3 | 4 |
-| --- | --- | --- | --- | --- |
-| Pi | 7 | 4 | 3 | 3 |
-| Vi | 13 | 12 | 8 | 10 |
 
 ```{math}
     Variable\ X:
