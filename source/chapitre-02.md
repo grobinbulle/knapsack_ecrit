@@ -45,7 +45,7 @@ Dans l’exemple en figure 3, l’algorithme ajoute l’objet 1 car son volume
 ```{math}
     V_{i} = 2
 ```
-est inférieur au volume restant du sac. 
+est inférieur au volume restant du sac 
 ```{math}
     V = 8
 ```
