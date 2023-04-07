@@ -4,10 +4,10 @@
 ``` 
 Comme évoqué dans la section précédente, l’algorithme glouton (ou greedy) appartient à la catégorie des méthodes approchées, ou heuristiques, et ne garantit aucunement d’obtenir la bonne réponse. L’algorithme glouton a pour but de choisir la meilleure solution localement. Il procède ici étape par étape. En d’autres termes, si l’on trie les objets par ordre décroissant, l’algorithme contrôle cas après cas si l’objet analysé peut être accepté. Si c’est le cas, l’objet rejoint définitivement le sac à dos, sinon, il ne le rejoint pas et le programme passe à l’objet suivant. 
 
-Pour illustrer le fonctionnement du programme, il peut être intéressant de s’attarder un exemple concret, plus simplifié que le sac à dos : le but est de réaliser le parcours qui, en additionnant les valeurs traversées, nous donne la plus grande somme totale, tout cela sans aucune contrainte ou quota. En réalisant le problème à la main sans algorithme (cf. Figure 3), on réalise qu’il faut d’abord choisir le parcours vert, passant par le nœud 6, 3, puis 59. 
+Pour illustrer le fonctionnement du programme, il peut être intéressant de s’attarder un exemple concret, plus simplifié que le sac à dos : le but est de réaliser le parcours qui, en additionnant les valeurs traversées, nous donne la plus grande somme totale, tout cela sans aucune contrainte ou quota. En réalisant le problème à la main sans algorithme (cf. Figure 3.1), on réalise qu’il faut d’abord choisir le parcours vert, passant par le nœud 6, 3, puis 59. 
 
 ```{warning}
-Il est important de noter que chaque nœud des exemples en figure 3 et 4 représente un objet différent : l'objet du nœud 3 n'est pas le même que l'objet du nœud 7. Dans le problème du sac à dos (cf. figure 5), au contraire, les nœuds d'une même ligne représentent le même objet.
+Il est important de noter que chaque nœud des exemples en figure 3.1 et 3.2 représente un objet différent : l'objet du nœud 3 n'est pas le même que l'objet du nœud 7. Dans le problème du sac à dos (cf. figure 3.3), au contraire, les nœuds d'une même ligne représentent le même objet.
 ```
 
 ```{figure} figures/arbre_vert.jpg
@@ -17,7 +17,7 @@ align : center
 ---
 Chemin choisi manuellement, menant à la réponse optimale 
 ```
-Le programme, quant à lui, prend des décisions localement (cf. Figure 4). Ainsi, lors du choix entre les nœuds 3 et 7, ce dernier choisira la plus grande valeur, le 7, sans tenir compte de ce qui adviendra par la suite. Par conséquent, en empruntant le chemin rouge en appliquant cette logique, la solution optimale n’est pas atteinte. Cependant, le résultat obtenu reste tout de même une solution acceptable étant donné l’économie de temps que l’on peut faire par rapport à la méthode "force brute" si le problème se complexifie par l'ajout de plusieurs objets. 
+Le programme, quant à lui, prend des décisions localement (cf. Figure 3.2). Ainsi, lors du choix entre les nœuds 3 et 7, ce dernier choisira la plus grande valeur, le 7, sans tenir compte de ce qui adviendra par la suite. Par conséquent, en empruntant le chemin rouge en appliquant cette logique, la solution optimale n’est pas atteinte. Cependant, le résultat obtenu reste tout de même une solution acceptable étant donné l’économie de temps que l’on peut faire par rapport à la méthode "force brute" si le problème se complexifie par l'ajout de plusieurs objets. 
 ```{figure} figures/arbre_rouge.jpg
 ---
 width: 50%
@@ -41,7 +41,7 @@ Représentation des objets sous forme de tableau :
 | Poids | 2 | 7 | 5 |
 | Rapport prix/poids | 11.5 | 3 | 2 |
 
-Dans l’exemple en figure 3, l’algorithme ajoute l’objet 1 car son volume
+Dans l’exemple en figure 3.1, l’algorithme ajoute l’objet 1 car son volume
 ```{math}
     V_{i} = 2
 ```
@@ -104,7 +104,7 @@ La complexité de cet algorithme glouton dépend de la complexité de l'opérati
 
 La fonction `sorted` a une complexité de temps de 
 ```{math}
-    O(n log(n))\ , \ n = nombre \ élément \ à \ trier
+    O(n log(n))\ , \ n = nombre \ d'objets \ qu'il \ faut \ encore \ trier
 ```
 Ensuite, la boucle qui parcourt la liste triée a une complexité de temps de 
 ```{math}
