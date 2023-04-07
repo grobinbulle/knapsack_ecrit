@@ -33,8 +33,8 @@ Exemple de tableau
 
 | #objet | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- | --- |
-| $$P_{i}$$ | 7 | 4 | 3 | 3 |
-| $$V_{i}$$ | 13 | 12 | 8 | 10 |
+| Pi | 7 | 4 | 3 | 3 |
+| Vi | 13 | 12 | 8 | 10 |
 
 ```{math}
     Variable\ X:
@@ -61,7 +61,15 @@ Il existe ainsi plusieurs méthodes de résolution différentes. Cependant, elle
 ### Méthode exacte
 Il est possible que l’on souhaite obtenir la meilleure solution, que l’on ne puisse pas obtenir mieux. La méthode exacte, ou par la force brute, consiste tout simplement à énumérer de toutes les possibilités d’arrangement, pour sélectionner la meilleure. 
 
-Pour illustrer ce principe, il est possible de raisonner par un arbre de recherche. Il est composé de nœuds, représentés par des cercles, qui représentent l’objet que l’on évalue. Les nœuds situés sur la même ligne correspondent au même objet. On passe à l’objet suivant par des arêtes. Si l’on prend l’objet dans le sac, on indique $$X = 1$$ sur l'arête en question, si l’on ne le prend pas, on lui indique $$X=0$$ Chaque objet possède ainsi 2 flèches qui partent de ce dernier. Lorsque l’on arrive au dernier objet, on calcule la somme des volumes ajoutés ainsi que celle des prix ajoutés, puis on en tire la solution optimale ne dépassant pas la limite de volume. 
+Pour illustrer ce principe, il est possible de raisonner par un arbre de recherche. Il est composé de nœuds, représentés par des cercles, qui représentent l’objet que l’on évalue. Les nœuds situés sur la même ligne correspondent au même objet. On passe à l’objet suivant par des arêtes. Si l’on prend l’objet dans le sac, on indique 
+```{math}
+    X = 1
+```
+sur l'arête en question, si l’on ne le prend pas, on lui indique 
+```{math}
+    X = 0
+```
+Chaque objet possède ainsi 2 flèches qui partent de ce dernier. Lorsque l’on arrive au dernier objet, on calcule la somme des volumes ajoutés ainsi que celle des prix ajoutés, puis on en tire la solution optimale ne dépassant pas la limite de volume. 
 ```{figure} figures/arbre_rech.jpg
 ---
 width: 50%
@@ -74,15 +82,32 @@ Sur ce schéma, les nœuds rouges symbolisent que la solution dépasse le quota 
 
 Par conséquent, cette méthode permet d’obtenir la meilleure solution, ce qui n’est pas négligeable. Cependant, le développement et les calculs à effectuer augmentent de manière exponentielle lorsque l’on applique ce raisonnement sur un nombre élevé d'objets. Ainsi, la tâche peut prendre un temps effroyable et augmente aussi le risque d’erreurs de calcul si une âme inconsciente se motive à évaluer ce problème à la main. Ainsi, leur longueur les rend souvent moins pertinentes surtout lorsqu’il s’agit de condition à respecter telles que le temps de réponse d’une machine. 
 
-Cette méthode explore ainsi $$ 2^{n}$$ chemins différents. Ainsi, si l'on s'intéresse à problème contenant 10 objets, on aura : $$2^{10} = 1'024 \ combinaisons$$
-Pour un problème de 20 objets, on aura : $$ 2^{20} = 1'048'576 \ combinaisons $$ Le nombre de combinaisons augmente ainsi exponentiellement. Il semble dès lors évident que cette méthode prend énormement de temps si l'on s'intéresse à de nombreux objets.
+Cette méthode explore ainsi
+```{math}
+    2^{n}
+```
+chemins différents. Ainsi, si l'on s'intéresse à problème contenant 10 objets, on aura 
+```{math}
+    2^{10} = 1'024 \ combinaisons
+```
+Pour un problème de 20 objets, on aura 
+```{math}
+    2^{20} = 1'048'576 \ combinaisons
+```
+Le nombre de combinaisons augmente ainsi exponentiellement. Il semble dès lors évident que cette méthode prend énormement de temps si l'on s'intéresse à de nombreux objets.
 
-Il peut être intéressant de s'appuyer sur le branch and bound afin de simplifier la recherche. En effet, son principe consiste en la subdivision de l'arbre puis en l'évaluation de la meilleure solution comprise dans la section étudiée. Uniquement cette dernière est stockée jusqu'à ce que l'on trouve une solution plus optimale, les autres sont directement éliminées. Cette méthode est donc pratique pour les problèmes de tailles conséquentes et permet tout de même d'atteindre la solution optimale. De plus, il n'y a donc pas besoin de stocker chaque méthode en mémoire, ce qui permet d'importantes économies. Là où la complexité de la méthode par la force brute atteint $$ O(2^{n}) $$ Le branch and bound permet de réduire considérablement le temps de calcul et d'obtenir des solutions plus rapidement. Bien que la complexité de cette dernière méthode soit également exponentielle dans le pire des cas, elle est généralement beaucoup plus faible que celle de la méthode par force brute.
+Il peut être intéressant de s'appuyer sur le branch and bound afin de simplifier la recherche. En effet, son principe consiste en la subdivision de l'arbre puis en l'évaluation de la meilleure solution comprise dans la section étudiée. Uniquement cette dernière est stockée jusqu'à ce que l'on trouve une solution plus optimale, les autres sont directement éliminées. Cette méthode est donc pratique pour les problèmes de tailles conséquentes et permet tout de même d'atteindre la solution optimale. De plus, il n'y a donc pas besoin de stocker chaque méthode en mémoire, ce qui permet d'importantes économies. Là où la complexité de la méthode par la force brute atteint
+```{math}
+    O(2^{n})
+```
+Le branch and bound permet de réduire considérablement le temps de calcul et d'obtenir des solutions plus rapidement. Bien que la complexité de cette dernière méthode soit également exponentielle dans le pire des cas, elle est généralement beaucoup plus faible que celle de la méthode par force brute.
 ### Méthode approchée
 La première méthode, dite “approchée”, permet d’obtenir une “bonne” solution tout en proposant une certaine économie de temps lors des calculs. Elle consiste en 3 étapes : 
 
-1) Calculer le rapport entre le prix et le volume de chaque objet : $$P_{i} /V_{i}$$ 
-
+1) Calculer le rapport entre le prix et le volume de chaque objet 
+```{math}
+    P_{i} /V_{i}
+```
 2) Trier par ordre décroissant les résultats obtenus. 
 
 3) Sélectionner les objets dans l’ordre du tri et les ajouter tant que le volume maximal n’est pas dépassé. Si un objet ne peut pas être ajouté, passer au prochain jusqu’à atteindre ou se rapprocher au maximum du quota autorisé 

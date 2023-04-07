@@ -41,7 +41,39 @@ Représentation des objets sous forme de tableau :
 | Poids | 2 | 7 | 5 |
 | Rapport prix/poids | 11.5 | 3 | 2 |
 
-Dans l’exemple en figure 3, l’algorithme ajoute l’objet 1 car son volume $$ V_{i} = 2 $$ est inférieur au volume restant du sac. $$V=8$$ Cependant, il ne peut pas accepter l’objet 2 car son volume $$V_{i} = 7$$ est désormais supérieur au volume restant $$V =8-2=6$$ et son ajout à l’objet 1 dépasserait la capacité maximale du sac. Néanmoins, il est possible d’ajouter l’objet 3 car son volume $$V_{i} = 5$$ peut être additionné à celui de l’objet 1 sans dépasser le quota $$V = (8-(2+5)=1)$$ Ainsi, $$P = \sum_{i=1}^{n} Prix_{i} = 33$$ pour un volume total$$V = \sum_{i=1}^{n} V_{i} = 7$$  ne dépassant pas le quota maximal. Dans cet exemple, il s’agit de la meilleure solution. 
+Dans l’exemple en figure 3, l’algorithme ajoute l’objet 1 car son volume
+```{math}
+    V_{i} = 2
+```
+est inférieur au volume restant du sac. 
+```{math}
+    V = 8
+```
+Cependant, il ne peut pas accepter l’objet 2 car son volume 
+```{math}
+    V_{i} = 7
+```
+est désormais supérieur au volume restant 
+```{math}
+    V =8-2=6
+```
+et son ajout à l’objet 1 dépasserait la capacité maximale du sac. Néanmoins, il est possible d’ajouter l’objet 3 car son volume 
+```{math}
+    V_{i} = 5
+```
+peut être additionné à celui de l’objet 1 sans dépasser le quota 
+```{math}
+    V = (8-(2+5)=1)
+```
+Ainsi, 
+```{math}
+    P = \sum_{i=1}^{n} Prix_{i} = 33
+```
+pour un volume total
+```{math}
+    V = \sum_{i=1}^{n} V_{i} = 7
+```
+ne dépassant pas le quota maximal. Dans cet exemple, il s’agit de la meilleure solution. 
 ##  Résolution du problème par l’algorithme glouton 
 Le problème peut ainsi être résolu par le code python ci-dessous :
 
@@ -70,16 +102,34 @@ Cette implémentation est un algorithme glouton car elle sélectionne les articl
 
 La complexité de cet algorithme glouton dépend de la complexité de l'opération de tri et de la boucle qui parcourt la liste triée. 
 
-La fonction `sorted` a une complexité de temps de $$O(n log(n))\ , \ n = nombre \ élément \ à \ trier$$
+La fonction `sorted` a une complexité de temps de 
+```{math}
+    O(n log(n))\ , \ n = nombre \ élément \ à \ trier
+```
+Ensuite, la boucle qui parcourt la liste triée a une complexité de temps de 
+```{math}
+    O(n)
+```
+car elle doit parcourir tous les éléments de la liste triée. 
 
-Ensuite, la boucle qui parcourt la liste triée a une complexité de temps de $$O(n)$$ car elle doit parcourir tous les éléments de la liste triée. 
-
-La complexité de temps totale de cet algorithme glouton est $$O(n log(n))$$ pour la fonction de tri et $$O(n)$$ pour la boucle, soit une complexité totale de $$O(n log (n))$$
-
+La complexité de temps totale de cet algorithme glouton est 
+```{math}
+    O(n log(n))
+```
+pour la fonction de tri et 
+```{math}
+    O(n)
+```
+pour la boucle, soit une complexité totale de 
+```{math}
+    O(n log (n))
+```
 Ainsi, l'algorithme glouton est plus rapide que l'algorithme par la force brute pour un nombre important d'objets. Néanmoins, pour un problème contenant peu d'objets, il se peut que la méthode gloutonne soit plus lente en raison de la complexité du tri initial des objets en fonction de leur rapport valeur/poids. 
 
-Dans un autre registre, si l'on souhaite améliorer cette méthode afin de trouver une meilleure solution, il peut être intéressant de s'attarder sur un algorithme glouton récursif capable de revenir en arrière pour explorer les diverses branches. Dans le pire des cas, la complexité de cet algorithme est exponentielle, c'est-à-dire qu'elle dépend de la taille de l'entrée et augmente rapidement avec le nombre d'objets à considérer. Cette complexité est due au fait que, dans certains cas, l'algorithme peut prendre une mauvaise décision à un moment donné, ce qui le conduit à explorer une branche de l'arbre de recherche qui ne contient pas la solution optimale. En conséquence, l'algorithme peut potentiellement examiner toutes les combinaisons possibles d'objets à placer dans le sac, ce qui donne une complexité exponentielle $$ O(2^{n})$$.
-
+Dans un autre registre, si l'on souhaite améliorer cette méthode afin de trouver une meilleure solution, il peut être intéressant de s'attarder sur un algorithme glouton récursif capable de revenir en arrière pour explorer les diverses branches. Dans le pire des cas, la complexité de cet algorithme est exponentielle, c'est-à-dire qu'elle dépend de la taille de l'entrée et augmente rapidement avec le nombre d'objets à considérer. Cette complexité est due au fait que, dans certains cas, l'algorithme peut prendre une mauvaise décision à un moment donné, ce qui le conduit à explorer une branche de l'arbre de recherche qui ne contient pas la solution optimale. En conséquence, l'algorithme peut potentiellement examiner toutes les combinaisons possibles d'objets à placer dans le sac, ce qui donne une complexité exponentielle 
+```{math}
+    O(2^{n})
+```
 ## Autres méthodes approchées
 L'algorithme glouton n'est pas l'unique méthode approchée. En effet, si l'on s'attarde sur les autres manières approchées de résoudre le problème, on peut évoquer les algorithmes génitiques et ceux basés sur les colonies de fourmies.
 ### Algorithme génétique
