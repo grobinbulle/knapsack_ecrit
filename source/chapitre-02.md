@@ -12,7 +12,7 @@ Il est important de noter que chaque nœud des exemples en figure 3.1 et 3.2 rep
 
 ```{figure} figures/arbre_vert.jpg
 ---
-width: 50%
+width: 45%
 align : center
 ---
 Chemin choisi manuellement, menant à la réponse optimale 
@@ -20,7 +20,7 @@ Chemin choisi manuellement, menant à la réponse optimale
 Le programme, quant à lui, prend des décisions localement (cf. Figure 3.2). Ainsi, lors du choix entre les nœuds 3 et 7, ce dernier choisira la plus grande valeur, le 7, sans tenir compte de ce qui adviendra par la suite. Par conséquent, en empruntant le chemin rouge en appliquant cette logique, la solution optimale n’est pas atteinte. Cependant, le résultat obtenu reste tout de même une solution acceptable étant donné l’économie de temps que l’on peut faire par rapport à la méthode "force brute" si le problème se complexifie par l'ajout de plusieurs objets. 
 ```{figure} figures/arbre_rouge.jpg
 ---
-width: 50%
+width: 45%
 align : center
 ---
 Chemin choisi par l’algorithme glouton, ne menant pas à la réponse optimale  
@@ -41,7 +41,7 @@ Représentation des objets sous forme de tableau :
 | Poids | 2 | 7 | 5 |
 | Rapport prix/poids | 11.5 | 3 | 2 |
 
-Dans l’exemple en figure 3.1, l’algorithme ajoute l’objet 1 car son volume
+Dans l’exemple du sac à dos en figure 3.3, l’algorithme ajoute l’objet 1 car son volume
 ```{math}
     V_{i} = 2
 ```
