@@ -37,6 +37,7 @@ align : center
 ---
 Chemin choisi par l’algorithme glouton, ne menant pas tout à fait à la réponse optimale  
 ```
+### Exemple de sac à dos menant à la solution optimale
 
 Dans le cadre du problème du sac à dos, il est possible d’appliquer le même raisonnement en triant les objets par ordre décroissant selon leur rapport prix/volume de chaque objet afin d'intégrer les objets les plus intéressants en premier. Après cela, on regarde si l’on peut rajouter chaque objet en fonction de son volume et du volume restant dans le sac. 
 ```{figure} figures/arbre_glouton.jpg
@@ -50,64 +51,64 @@ Représentation des objets sous forme de tableau :
 | #objet | 1 | 2 | 3 |
 | --- | --- | --- | --- |
 | Prix | 23 | 21 | 10 |
-| Poids | 2 | 7 | 5 |
-| Rapport prix/poids | 11.5 | 3 | 2 |
+| Volume | 2 | 7 | 5 |
+| Rapport prix/volume | 11.5 | 3 | 2 |
 
-Dans l’exemple du sac à dos en figure 3.3, l’algorithme ajoute l’objet 1 car son poids
+Dans l’exemple du sac à dos en figure 3.3, l’algorithme ajoute l’objet 1 car son volume
 ```{math}
-    Poids_{i} = 2
+    V_{i} = 2
 ```
-est inférieur au poids restant du sac 
+est inférieur au volume restant du sac 
 ```{math}
-    Poids = 8
+    V = 8
 ```
-Cependant, il ne peut pas accepter l’objet 2 car son poids 
+Cependant, il ne peut pas accepter l’objet 2 car son volume 
 ```{math}
-    Poids_{i} = 7
+    V_{i} = 7
 ```
-est désormais supérieur au poids restant 
+est désormais supérieur au volume restant 
 ```{math}
-    Poids =8-2=6
+    V =8-2=6
 ```
-et son ajout à l’objet 1 dépasserait la capacité maximale du sac. Néanmoins, il est possible d’ajouter l’objet 3 car son poids 
+et son ajout à l’objet 1 dépasserait la capacité maximale du sac. Néanmoins, il est possible d’ajouter l’objet 3 car son volume 
 ```{math}
-    Poids_{i} = 5
+    V_{i} = 5
 ```
 peut être additionné à celui de l’objet 1 sans dépasser le quota 
 ```{math}
-    Poids = (8-(2+5)=1)
+    V = (8-(2+5)=1)
 ```
 Ainsi, 
 ```{math}
     Prix = \sum_{i=1}^{n} Prix_{i} = 33
 ```
-pour un poids total
+pour un volume total
 ```{math}
-    Poids = \sum_{i=1}^{n} P_{i} = 7
+    V = \sum_{i=1}^{n} V_{i} = 7
 ```
 ne dépassant pas le quota maximal. Dans cet exemple, il s’agit de la meilleure solution. 
-
-Cependant, si l'on imagine un sac à dos représenté par le tableau suivant et ayant une limite de poids fixée à 30
+### Exemple de sac à dos ne menant pas à la solution optimale
+Cependant, si l'on imagine un sac à dos représenté par le tableau suivant et ayant une limite de volume fixée à 30
 | #objet | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- | --- |
 | Prix | 100 | 90 | 120 | 40 |
-| Poids | 30 | 20 | 25 | 10 |
-| Rapport prix/poids | 3.33 | 4.5 | 4.8 | 4 |
+| Volume | 30 | 20 | 25 | 10 |
+| Rapport prix/volume | 3.33 | 4.5 | 4.8 | 4 |
 
-L'algorithme glouton choisirait en premier l'objet 3 car son rapport prix/poids est le plus grand.
-En l'ajoutant, cet objet, le poids restant dans le sac n'est plus que de
+L'algorithme glouton choisirait en premier l'objet 3 car son rapport prix/volume est le plus grand.
+En l'ajoutant, cet objet, le volume restant dans le sac n'est plus que de
 ```{math}
-    Poids = 30 - 25 = 5
+    V = 30 - 25 = 5
 ```
 L'algorithme ne peut donc plus ajouter un seul objet qui puisse respecter le quota. 
 La solution proposée par l'algorithme glouton est donc
 ```{math}
     Prix = 120
 ```
-En réalisant le problème à la main, on se rend compte qu'il est préférable de choisir les objets 2 et 4, bien qu'ils n'aient pas le plus grand rapport prix/poids.
-En effet, l'addition des deux objets respecte le quota de poids
+En réalisant le problème à la main, on se rend compte qu'il est préférable de choisir les objets 2 et 4, bien qu'ils n'aient pas le plus grand rapport prix/volume.
+En effet, l'addition des deux objets respecte le quota de volume
 ```{math}
-    Poids = 30 - 20 - 10 = 0
+    V = 30 - 20 - 10 = 0
 ```
 Et propose une solution 
 ```{math}
@@ -120,25 +121,25 @@ Ainsi, on constate que l'algorithme glouton ne mène pas forcément à la soluti
 Le problème peut ainsi être résolu par le code python ci-dessous :
 
 ```python 
-def algo_glouton(poids, valeurs, capacite): 
-    items = sorted(range(len(poids)), key=lambda i: -valeurs[i] / poids[i]) 
-    poids_total = 0 
+def algo_glouton(volume, valeurs, capacite): 
+    items = sorted(range(len(volume)), key=lambda i: -valeurs[i] / volume[i]) 
+    volume_total = 0 
     valeur_totale = 0 
     for i in items: 
-        if poids_total + poids[i] <= capacite: 
-            poids_total += poids[i] 
+        if volume_total + volume[i] <= capacite: 
+            volume_total += volume[i] 
             valeur_totale += valeurs[i] 
     return valeur_totale
 ```
-Cette implémentation prend trois entrées : `poids` et `valeurs`, qui sont des listes des poids et des valeurs des articles, et `capacite`, qui est le poids maximal que le sac à dos peut contenir. 
+Cette implémentation prend trois entrées : `volume` et `valeurs`, qui sont des listes des volume et des valeurs des articles, et `capacite`, qui est le volume maximal que le sac à dos peut contenir. 
 
-L'algorithme commence par créer une liste des indices des différents articles, triés par ordre décroissant de leur rapport valeur/poids. Cela est fait en utilisant la fonction `sorted` avec un paramètre `key` qui spécifie les critères de tri. 
+L'algorithme commence par créer une liste des indices des différents articles, triés par ordre décroissant de leur rapport valeur/volume. Cela est fait en utilisant la fonction `sorted` avec un paramètre `key` qui spécifie les critères de tri. 
 
 Ensuite, l'algorithme boucle à travers la liste triée des articles et ajoute chaque article au sac à dos s'il ne dépasse pas la capacité. La boucle continue jusqu'à ce que la capacité soit atteinte ou que tous les articles aient été considérés. 
 
 Enfin, l'algorithme renvoie la valeur totale des articles dans le sac à dos. 
 
-Cette implémentation est un algorithme glouton car elle sélectionne les articles dans l'ordre décroissant du rapport valeur/poids, sans tenir compte de l'impact global sur la capacité du sac à dos ou des valeurs et des poids des autres articles qui pourraient être ajoutés plus tard. Cette approche peut produire des solutions sous-optimales, mais elle est rapide et simple à mettre en œuvre. 
+Cette implémentation est un algorithme glouton car elle sélectionne les articles dans l'ordre décroissant du rapport valeur/volume, sans tenir compte de l'impact global sur la capacité du sac à dos ou des valeurs et des volumes des autres articles qui pourraient être ajoutés plus tard. Cette approche peut produire des solutions sous-optimales, mais elle est rapide et simple à mettre en œuvre. 
 
 ### Complexité 
 
@@ -166,7 +167,7 @@ pour la boucle, soit une complexité totale de
 ```{math}
     O(n log (n))
 ```
-Ainsi, l'algorithme glouton est plus rapide que l'algorithme par la force brute pour un nombre important d'objets. Néanmoins, pour un problème contenant peu d'objets, il se peut que la méthode gloutonne soit plus lente en raison de la complexité du tri initial des objets en fonction de leur rapport valeur/poids. 
+Ainsi, l'algorithme glouton est plus rapide que l'algorithme par la force brute pour un nombre important d'objets. Néanmoins, pour un problème contenant peu d'objets, il se peut que la méthode gloutonne soit plus lente en raison de la complexité du tri initial des objets en fonction de leur rapport valeur/volume. 
 
 Dans un autre registre, si l'on souhaite améliorer cette méthode afin de trouver une meilleure solution, il peut être intéressant de s'attarder sur un algorithme glouton récursif capable de revenir en arrière pour explorer les diverses branches. Dans le pire des cas, la complexité de cet algorithme est exponentielle, c'est-à-dire qu'elle dépend de la taille de l'entrée et augmente rapidement avec le nombre d'objets à considérer. Cette complexité est due au fait que, dans certains cas, l'algorithme peut prendre une mauvaise décision à un moment donné, ce qui le conduit à explorer une branche de l'arbre de recherche qui ne contient pas la solution optimale. En conséquence, l'algorithme peut potentiellement examiner toutes les combinaisons possibles d'objets à placer dans le sac, ce qui donne une complexité exponentielle 
 ```{math}
@@ -181,7 +182,7 @@ Il fonctionne de la manière suivante :
 
 1) Génération de la population initiale : On crée une population de solutions candidates. Chaque solution représente une sélection d'objets à potentiellement inclure dans le sac à dos. 
 
-2) Tri des solutions : On évalue chaque solution de la population en calculant la valeur totale des objets qu'elle contient et en vérifiant si elle respecte la limite de poids du sac à dos. Après cela, on sélectionne les meilleures solutions pour la prochaine génération de solution
+2) Tri des solutions : On évalue chaque solution de la population en calculant la valeur totale des objets qu'elle contient et en vérifiant si elle respecte la limite de volume du sac à dos. Après cela, on sélectionne les meilleures solutions pour la prochaine génération de solution
 
 3) Combination : On combine certaines parties des solutions sélectionnées pour créer de nouvelles solutions candidates, constituant une nouvelle génération.
 
@@ -197,9 +198,9 @@ L'algorithme basé sur les colonies de fourmis est une technique d'optimisation 
 
 L'algorithme basé sur les colonies de fourmis pour le problème du sac à dos fonctionne de la manière suivante :
 
-1) Initialisation : On commence par générer une population de fourmis artificielles, qui représentent les "constructeurs" des solutions candidates. Chaque fourmi commence avec une solution vide et se déplace dans l'espace des solutions pour créer une solution candidate selon une règle de transition stochastique. Cette règle permet à la fourmi de choisir un objet à ajouter à la solution en fonction de sa valeur et de son poids. Les objets les plus rentables ont une probabilité plus élevée d'être choisis, mais les objets plus lourds ont une probabilité plus faible.
+1) Initialisation : On commence par générer une population de fourmis artificielles, qui représentent les "constructeurs" des solutions candidates. Chaque fourmi commence avec une solution vide et se déplace dans l'espace des solutions pour créer une solution candidate selon une règle de transition stochastique. Cette règle permet à la fourmi de choisir un objet à ajouter à la solution en fonction de sa valeur et de son volume. Les objets les plus rentables ont une probabilité plus élevée d'être choisis, mais les objets plus lourds ont une probabilité plus faible.
 
-2) Évaluation de la solution : Une fois que la fourmi a ajouté un objet à sa solution, celle-ci est évaluée pour voir si elle respecte la limite de poids du sac à dos. Si la limite est dépassée, la solution est invalide.
+2) Évaluation de la solution : Une fois que la fourmi a ajouté un objet à sa solution, celle-ci est évaluée pour voir si elle respecte la limite de volume du sac à dos. Si la limite est dépassée, la solution est invalide.
 
 3) Mise à jour de la phéromone : Après que toutes les fourmis ont construit leur solution, la phéromone est mise à jour. Les fourmis déposent une quantité de phéromone proportionnelle à la qualité de leur solution. Les solutions de haute qualité reçoivent plus de phéromone.
 
