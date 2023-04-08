@@ -96,7 +96,7 @@ Pour un problème de 20 objets, on aura
 ```
 Le nombre de combinaisons augmente ainsi exponentiellement. Il semble dès lors évident que cette méthode prend énormement de temps si l'on s'intéresse à de nombreux objets.
 
-Il peut être intéressant de s'appuyer sur le branch and bound afin de simplifier la recherche. En effet, son principe consiste en la subdivision de l'arbre puis en l'évaluation de la meilleure solution comprise dans la section étudiée. Uniquement cette dernière est stockée jusqu'à ce que l'on trouve une solution plus optimale, les autres sont directement éliminées. Cette méthode est donc pratique pour les problèmes de tailles conséquentes et permet tout de même d'atteindre la solution optimale. De plus, il n'y a donc pas besoin de stocker chaque méthode en mémoire, ce qui permet d'importantes économies. Là où la complexité de la méthode par la force brute atteint
+Il peut être intéressant de s'appuyer sur le branch and bound afin de simplifier la recherche. En effet, son principe consiste en la subdivision de l'arbre puis en l'évaluation de la meilleure solution comprise dans la section étudiée. Seule cette dernière est stockée jusqu'à ce que l'on trouve une solution plus optimale, les autres sont directement éliminées. Cette méthode est donc pratique pour les problèmes de tailles conséquentes et permet tout de même d'atteindre la solution optimale. De plus, il n'y a donc pas besoin de stocker chaque méthode en mémoire, ce qui permet d'importantes économies. Là où la complexité de la méthode par la force brute atteint
 ```{math}
     O(2^{n})
 ```
