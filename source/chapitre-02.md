@@ -14,8 +14,6 @@ Comme évoqué dans la section précédente, l’algorithme glouton (ou greedy) 
 
 Cette méthode est intéressante car elle apporte un gain de temps conséquent. De plus, elle permet d’avoir une solution acceptable. Enfin, elle semble aisément compréhensible et ne présente que peu de risques d’erreurs de calcul si l’on résout le problème à la main. 
 
-Néanmoins, il est impossible d’utiliser cette démarche lorsque l’on désir obtenir l’arrangement le plus efficace. Pour ajouter à cela, bien qu’il soit possible de l’effectuer quand on ne peut ajouter qu’un seul exemplaire de l’objet, il devient de plus en plus ardu de démarcher de la sorte. 
-
 En d’autres termes, si l’on trie les objets par ordre décroissant, l’algorithme contrôle cas après cas si l’objet analysé peut être accepté. Si c’est le cas, l’objet rejoint définitivement le sac à dos, sinon, il ne le rejoint pas et le programme passe à l’objet suivant. 
 
 Pour illustrer le fonctionnement du programme, il peut être intéressant de s’attarder un exemple concret, plus simplifié que le sac à dos : le but est de réaliser le parcours qui, en additionnant les valeurs traversées, nous donne la plus grande somme totale, tout cela sans aucune contrainte ou quota. En réalisant le problème à la main sans algorithme (cf. Figure 3.1), on réalise qu’il faut d’abord choisir le parcours vert, passant par le nœud 6, 3, puis 59. 
@@ -26,7 +24,7 @@ Il est important de noter que chaque nœud des exemples en figure 3.1 et 3.2 rep
 
 ```{figure} figures/arbre_vert.jpg
 ---
-width: 45%
+width: 60%
 align : center
 ---
 Chemin choisi manuellement, menant à la réponse optimale 
@@ -34,7 +32,7 @@ Chemin choisi manuellement, menant à la réponse optimale
 Le programme, quant à lui, prend des décisions localement (cf. Figure 3.2). Ainsi, lors du choix entre les nœuds 3 et 7, ce dernier choisira la plus grande valeur, le 7, sans tenir compte de ce qui adviendra par la suite. Par conséquent, en empruntant le chemin rouge en appliquant cette logique, la solution optimale n’est pas atteinte. Cependant, le résultat obtenu reste tout de même une solution acceptable étant donné l’économie de temps que l’on peut faire par rapport à la méthode "force brute" si le problème se complexifie par l'ajout de plusieurs objets. 
 ```{figure} figures/arbre_rouge.jpg
 ---
-width: 45%
+width: 60%
 align : center
 ---
 Chemin choisi par l’algorithme glouton, ne menant pas tout à fait à la réponse optimale  
