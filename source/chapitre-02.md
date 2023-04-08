@@ -55,39 +55,39 @@ Représentation des objets sous forme de tableau :
 
 Dans l’exemple du sac à dos en figure 3.3, l’algorithme ajoute l’objet 1 car son poids
 ```{math}
-    P_{i} = 2
+    Poids_{i} = 2
 ```
 est inférieur au poids restant du sac 
 ```{math}
-    P = 8
+    Poids = 8
 ```
 Cependant, il ne peut pas accepter l’objet 2 car son poids 
 ```{math}
-    P_{i} = 7
+    Poids_{i} = 7
 ```
 est désormais supérieur au poids restant 
 ```{math}
-    P =8-2=6
+    Poids =8-2=6
 ```
 et son ajout à l’objet 1 dépasserait la capacité maximale du sac. Néanmoins, il est possible d’ajouter l’objet 3 car son poids 
 ```{math}
-    P_{i} = 5
+    Poids_{i} = 5
 ```
 peut être additionné à celui de l’objet 1 sans dépasser le quota 
 ```{math}
-    P = (8-(2+5)=1)
+    Poids = (8-(2+5)=1)
 ```
 Ainsi, 
 ```{math}
-    P = \sum_{i=1}^{n} Prix_{i} = 33
+    Prix = \sum_{i=1}^{n} Prix_{i} = 33
 ```
-pour un volume total
+pour un poids total
 ```{math}
-    P = \sum_{i=1}^{n} P_{i} = 7
+    Poids = \sum_{i=1}^{n} P_{i} = 7
 ```
 ne dépassant pas le quota maximal. Dans cet exemple, il s’agit de la meilleure solution. 
 
-Cependant, si l'on imagine un sac à dos représenté par le tableau suivant et ayant une limite de poids fixée à 50
+Cependant, si l'on imagine un sac à dos représenté par le tableau suivant et ayant une limite de poids fixée à 30
 | #objet | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- | --- |
 | Prix | 100 | 90 | 120 | 40 |
@@ -95,7 +95,27 @@ Cependant, si l'on imagine un sac à dos représenté par le tableau suivant et 
 | Rapport prix/poids | 3.33 | 4.5 | 4.8 | 4 |
 
 L'algorithme glouton choisirait en premier l'objet 3 car son rapport prix/poids est le plus grand.
-En l'ajoutant, le 
+En l'ajoutant, cet objet, le poids restant dans le sac n'est plus que de
+```{math}
+    Poids = 30 - 25 = 5
+```
+L'algorithme ne peut donc plus ajouter un seul objet qui puisse respecter le quota. 
+La solution proposée par l'algorithme glouton est donc
+```{math}
+    Prix = 120
+```
+En réalisant le problème à la main, on se rend compte qu'il est préférable de choisir les objets 2 et 4, bien qu'ils n'aient pas le plus grand rapport prix/poids.
+En effet, l'addition des deux objets respecte le quota de poids
+```{math}
+    Poids = 30 - 20 - 10 = 0
+```
+Et propose une solution 
+```{math}
+    Prix = 90 + 40 = 130
+```
+Meilleure que celle apportée par l'algorithme glouton.
+Ainsi, on constate que l'algorithme glouton ne mène pas forcément à la solution optimale.
+
 ##  Résolution du problème par l’algorithme glouton 
 Le problème peut ainsi être résolu par le code python ci-dessous :
 
