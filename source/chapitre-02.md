@@ -53,29 +53,29 @@ Représentation des objets sous forme de tableau :
 | Poids | 2 | 7 | 5 |
 | Rapport prix/poids | 11.5 | 3 | 2 |
 
-Dans l’exemple du sac à dos en figure 3.3, l’algorithme ajoute l’objet 1 car son volume
+Dans l’exemple du sac à dos en figure 3.3, l’algorithme ajoute l’objet 1 car son poids
 ```{math}
-    V_{i} = 2
+    P_{i} = 2
 ```
-est inférieur au volume restant du sac 
+est inférieur au poids restant du sac 
 ```{math}
-    V = 8
+    P = 8
 ```
-Cependant, il ne peut pas accepter l’objet 2 car son volume 
+Cependant, il ne peut pas accepter l’objet 2 car son poids 
 ```{math}
-    V_{i} = 7
+    P_{i} = 7
 ```
-est désormais supérieur au volume restant 
+est désormais supérieur au poids restant 
 ```{math}
-    V =8-2=6
+    P =8-2=6
 ```
-et son ajout à l’objet 1 dépasserait la capacité maximale du sac. Néanmoins, il est possible d’ajouter l’objet 3 car son volume 
+et son ajout à l’objet 1 dépasserait la capacité maximale du sac. Néanmoins, il est possible d’ajouter l’objet 3 car son poids 
 ```{math}
-    V_{i} = 5
+    P_{i} = 5
 ```
 peut être additionné à celui de l’objet 1 sans dépasser le quota 
 ```{math}
-    V = (8-(2+5)=1)
+    P = (8-(2+5)=1)
 ```
 Ainsi, 
 ```{math}
@@ -83,9 +83,19 @@ Ainsi,
 ```
 pour un volume total
 ```{math}
-    V = \sum_{i=1}^{n} V_{i} = 7
+    P = \sum_{i=1}^{n} P_{i} = 7
 ```
 ne dépassant pas le quota maximal. Dans cet exemple, il s’agit de la meilleure solution. 
+
+Cependant, si l'on imagine un sac à dos représenté par le tableau suivant et ayant une limite de poids fixée à 50
+| #objet | 1 | 2 | 3 | 4 |
+| --- | --- | --- | --- | --- |
+| Prix | 100 | 90 | 120 | 40 |
+| Poids | 30 | 20 | 25 | 10 |
+| Rapport prix/poids | 3.33 | 4.5 | 4.8 | 4 |
+
+L'algorithme glouton choisirait en premier l'objet 3 car son rapport prix/poids est le plus grand.
+En l'ajoutant, le 
 ##  Résolution du problème par l’algorithme glouton 
 Le problème peut ainsi être résolu par le code python ci-dessous :
 
