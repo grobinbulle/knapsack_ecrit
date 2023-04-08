@@ -101,7 +101,10 @@ Il peut être intéressant de s'appuyer sur le branch and bound afin de simplifi
     O(2^{n})
 ```
 Le branch and bound permet de réduire considérablement le temps de calcul et d'obtenir des solutions plus rapidement. Bien que la complexité de cette dernière méthode soit également exponentielle dans le pire des cas, elle est généralement beaucoup plus faible que celle de la méthode par force brute.
-### Méthode approchée
-La première méthode, dite “approchée”, permet d’obtenir une “bonne” solution tout en proposant une certaine économie de temps lors des calculs. Elle consiste en 3 étapes : 
+### Méthode approchée 
+Les méthodes approchées (ou heuristiques) permettent de trouver de manière rapide une solution réalisable à un problème donné. Cependant cette solution n’est pas forcément la solution optimale.
+L’objectif d’une heuristique est donc de trouver une solution la plus proche possible de celle d’une
+méthode exacte tout en étant plus rapide. Plus le résultat obtenu est proche de la solution optimale,
+meilleure est l’heuristique.
 
 Sur les nombreux algorithmes basés sur la méthode approchée, l’algorithme glouton demeure comme l’un des plus populaire. C’est pourquoi je m’attarde sur ce dernier dans le prochain chapitre de ce travail. 
