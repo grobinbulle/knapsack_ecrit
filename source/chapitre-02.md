@@ -23,7 +23,7 @@ Le programme, quant à lui, prend des décisions localement (cf. Figure 3.2). Ai
 width: 45%
 align : center
 ---
-Chemin choisi par l’algorithme glouton, ne menant pas à la réponse optimale  
+Chemin choisi par l’algorithme glouton, ne menant pas tout à fait à la réponse optimale  
 ```
 
 Dans le cadre du problème du sac à dos, il est possible d’appliquer le même raisonnement en triant les objets par ordre décroissant selon leur rapport prix/volume de chaque objet afin d'intégrer les objets les plus intéressants en premier. Après cela, on regarde si l’on peut rajouter chaque objet en fonction de son volume et du volume restant dans le sac. 
