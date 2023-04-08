@@ -103,7 +103,7 @@ En l'ajoutant, cet objet, le volume restant dans le sac n'est plus que de
 L'algorithme ne peut donc plus ajouter un seul objet qui puisse respecter le quota. 
 La solution proposée par l'algorithme glouton est donc
 ```{math}
-    Prix = 120
+    \sum Prix = 120
 ```
 En réalisant le problème à la main, on se rend compte qu'il est préférable de choisir les objets 2 et 4, bien qu'ils n'aient pas le plus grand rapport prix/volume.
 En effet, l'addition des deux objets respecte le quota de volume
@@ -112,7 +112,7 @@ En effet, l'addition des deux objets respecte le quota de volume
 ```
 Et propose une solution 
 ```{math}
-    Prix = 90 + 40 = 130
+    \sum Prix = 90 + 40 = 130
 ```
 Meilleure que celle apportée par l'algorithme glouton.
 Ainsi, on constate que l'algorithme glouton ne mène pas forcément à la solution optimale.
