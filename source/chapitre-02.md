@@ -37,6 +37,7 @@ align : center
 ---
 Chemin choisi par l’algorithme glouton, ne menant pas tout à fait à la réponse optimale  
 ```
+## Exemples
 ### Exemple de sac à dos menant à la solution optimale
 
 Dans le cadre du problème du sac à dos, il est possible d’appliquer le même raisonnement en triant les objets par ordre décroissant selon leur rapport prix/volume de chaque objet afin d'intégrer les objets les plus intéressants en premier. Après cela, on regarde si l’on peut rajouter chaque objet en fonction de son volume et du volume restant dans le sac. 
@@ -87,7 +88,7 @@ pour un volume total
     V = \sum_{i=1}^{n} V_{i} = 7
 ```
 ne dépassant pas le quota maximal. Dans cet exemple, il s’agit de la meilleure solution. 
-### Exemple de sac à dos ne menant pas à la solution optimale
+### Exemple de sac à dos menant à une solution bonne mais pas optimale
 Cependant, si l'on imagine un sac à dos représenté par le tableau suivant et ayant une limite de volume fixée à 30
 | #objet | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- | --- |
@@ -117,65 +118,34 @@ Et propose une solution
 Meilleure que celle apportée par l'algorithme glouton.
 Ainsi, on constate que l'algorithme glouton ne mène pas forcément à la solution optimale.
 
-###  Résolution du problème par l’algorithme glouton 
-Le problème peut ainsi être résolu par le code python ci-dessous :
+### Exemple de sac à dos ne menant pas du tout à la solution optimale
+De plus, en utilisant le tableau suivant, composé de 2 éléments avec un volume maximal de 200 
+| #objet | 1 | 2 |
+| --- | --- | --- | 
+| Prix | 4 | 750 |
+| Volume | 1 | 200 |
+| Rapport prix/volume | 4 | 3.75 | 
 
-```python 
-def algo_glouton(volume, valeurs, capacite): 
-    items = sorted(range(len(volume)), key=lambda i: -valeurs[i] / volume[i]) 
-    volume_total = 0 
-    valeur_totale = 0 
-    for i in items: 
-        if volume_total + volume[i] <= capacite: 
-            volume_total += volume[i] 
-            valeur_totale += valeurs[i] 
-    return valeur_totale
+L'algorithme ne renvoie pas du tout la solution optimale.
+En effet, il choisit l'objet 1 car il a un rapport prix/volume plus important que l'objet 2.
+Néanmoins, en ajoutant cet objet, on se rend compte que le volume restant
+```{math}
+    V = 200 - 1 = 199
 ```
-```python
-def knapsack_greedy(weights, values, capacity):
-    # Crée une liste de tuples contenant les poids, valeurs et le ratio de chaque objet
-    items = list(zip(weights, values))
-    # Trie les objets par rapport valeur/poids décroissant
-    items.sort(key=lambda x: x[1] / x[0], reverse=True)
-    max_value = 0
-    # Ajoute le premier objet s'il peut tenir dans le sac à dos
-    if items[0][0] <= capacity:
-        max_value += items[0][1]
-        capacity -= items[0][0]
-        items = items[1:]
-    # Ajoute les autres objets triés par ordre décroissant de rapport valeur/poids jusqu'à atteindre la capacité maximale
-    for w, v in items:
-        if w <= capacity:
-            max_value += v
-            capacity -= w
-        else:
-            break
-    return max_value
-    # Saisie de l'entrée utilisateur
-n = int(input("Entrez le nombre d'objets dans le sac à dos : "))
-weights = []
-values = []
-for i in range(n):
-    weights.append(int(input("Entrez le poids entier de l'objet {i+1} : ")))
-    values.append(int(input("Entrez la valeur entière de l'objet {i+1} : ")))
-capacity = int(input("Entrez la capacité maximale entière du sac à dos : "))
-
-# Résolution du problème du sac à dos
-final_value = knapsack_greedy(weights, values, capacity)
-
-# Affichage du résultat
-print("La valeur maximale du sac à dos est :", final_value)
+Ne permet pas d'ajouter l'objet 2 ayant un volume
+```{math}
+    V_{i} = 200
 ```
-
-Cette implémentation prend trois entrées : `volume` et `valeurs`, qui sont des listes des volume et des valeurs des articles, et `capacite`, qui est le volume maximal que le sac à dos peut contenir. 
-
-L'algorithme commence par créer une liste des indices des différents articles, triés par ordre décroissant de leur rapport valeur/volume. Cela est fait en utilisant la fonction `sorted` avec un paramètre `key` qui spécifie les critères de tri. 
-
-Ensuite, l'algorithme boucle à travers la liste triée des articles et ajoute chaque article au sac à dos s'il ne dépasse pas la capacité. La boucle continue jusqu'à ce que la capacité soit atteinte ou que tous les articles aient été considérés. 
-
-Enfin, l'algorithme renvoie la valeur totale des articles dans le sac à dos. 
-
-Cette implémentation est un algorithme glouton car elle sélectionne les articles dans l'ordre décroissant du rapport valeur/volume, sans tenir compte de l'impact global sur la capacité du sac à dos ou des valeurs et des volumes des autres articles qui pourraient être ajoutés plus tard. Cette approche peut produire des solutions sous-optimales, mais elle est rapide et simple à mettre en œuvre. 
+L'algorithme renvoie alors que la solution est
+```{math}
+    \sum Prix = 4
+```
+En réalisant le problème à la main, on comprend qu'il faut ajouter l'bjet 2 bien que son rapport soit plus petit.
+Ainsi, en ajoutant cet objet, tout le volume est utilisé et la solution proposée est 
+```{math}
+    \sum Prix = 750
+```
+Ce qui démontre que l'algorithme glouton mène parfois à des solution catastrophique.
 
 ### Complexité 
 

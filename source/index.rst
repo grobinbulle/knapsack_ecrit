@@ -15,6 +15,7 @@ Problème du Sac à dos
     chapitre-01.md
     chapitre-02.md
     conclusion_sad.md
+    annexes_sad.md
     sources_sad.md
 
 ..
