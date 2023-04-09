@@ -41,6 +41,7 @@ Chemin choisi par l’algorithme glouton, ne menant pas tout à fait à la répo
 ### Exemple de sac à dos menant à la solution optimale
 
 Dans le cadre du problème du sac à dos, il est possible d’appliquer le même raisonnement en triant les objets par ordre décroissant selon leur rapport prix/volume de chaque objet afin d'intégrer les objets les plus intéressants en premier. Après cela, on regarde si l’on peut rajouter chaque objet en fonction de son volume et du volume restant dans le sac. 
+Pour cela, on utilise le code en annexe 1, généré par ChatGPT.
 ```{figure} figures/arbre_glouton.jpg
 ---
 width: 70%
@@ -149,9 +150,9 @@ Ce qui démontre que l'algorithme glouton mène parfois à des solution catastro
 
 ### Complexité 
 
-La complexité de cet algorithme glouton dépend de la complexité de l'opération de tri et de la boucle qui parcourt la liste triée. 
+La complexité de l'algorithme glouton généré par ChatGPT dépend de la complexité de l'opération de tri et de la boucle qui parcourt la liste triée. 
 
-La fonction `sorted` a une complexité de temps de 
+La fonction `sort` a une complexité de temps de 
 ```{math}
     O(n log(n))\ , \ n = nombre \ d'objets \ qu'il \ faut \ encore \ trier
 ```
