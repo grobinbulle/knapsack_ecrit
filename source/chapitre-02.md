@@ -189,7 +189,7 @@ Il fonctionne de la manière suivante :
 
 1) Génération de la population initiale : On crée une population de solutions candidates. Chaque solution représente une sélection d'objets à potentiellement inclure dans le sac à dos. 
 
-2) Tri des solutions : On évalue chaque solution de la population en calculant la valeur totale des objets qu'elle contient et en vérifiant si elle respecte la limite de volume du sac à dos. Après cela, on sélectionne les meilleures solutions pour la prochaine génération de solution
+2) Tri des solutions : On évalue chaque solution de la population en calculant la valeur totale des objets qu'elle contient et en vérifiant si elle respecte la limite de volume du sac à dos. Après cela, on sélectionne les meilleures solutions pour la prochaine génération de solution.
 
 3) Combination : On combine certaines parties des solutions sélectionnées pour créer de nouvelles solutions candidates, constituant une nouvelle génération.
 
