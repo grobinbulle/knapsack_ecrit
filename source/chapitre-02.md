@@ -98,7 +98,7 @@ Cependant, si l'on imagine un sac à dos représenté par le tableau suivant et 
 | Rapport prix/volume | 3.33 | 4.5 | 4.8 | 4 |
 
 L'algorithme glouton choisirait en premier l'objet 3 car son rapport prix/volume est le plus grand.
-En l'ajoutant, cet objet, le volume restant dans le sac n'est plus que de
+En ajoutant cet objet, le volume restant dans le sac n'est plus que de
 ```{math}
     V = 30 - 25 = 5
 ```
