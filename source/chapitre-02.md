@@ -44,7 +44,7 @@ Dans le cadre du problème du sac à dos, il est possible d’appliquer le même
 Pour cela, on utilise le code en annexe 1, généré par ChatGPT.
 ```{figure} figures/arbre_glouton.jpg
 ---
-width: 50%
+width: 75%
 align : center
 ---
 Chemin choisi par l’algorithme glouton  
