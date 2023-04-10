@@ -12,7 +12,7 @@ DLATREYTE, informations concernant le problème : <https://dlatreyte.github.io/t
 
 FR-ACADEMIC, explications complète du problème :  <https://fr-academic.com/dic.nsf/frwiki/1374576>, consulté le 12 janvier 2023. 
 
-LGT SAINT-EXUPERY, information sur les algorithmes gloutons : <https://nsi4noobs.fr/IMG/pdf/f5_1nsi_algos_gloutons.pdf>, consulté le 30 janvier 2023. 
+LGT SAINT-EXUPERY, informations sur les algorithmes gloutons : <https://nsi4noobs.fr/IMG/pdf/f5_1nsi_algos_gloutons.pdf>, consulté le 30 janvier 2023. 
 
 TUTORIALSPOINT, sac à dos par algorithme glouton : <https://www.tutorialspoint.com/design_and_analysis_of_algorithms/design_and_analysis_of_algorithms_fractional_knapsack.htm>, consulté le 30 janvier 2023. 
 
@@ -25,4 +25,4 @@ Figure 2.1, COMPLEX SYSTEMS AI : <https://complex-systems-ai.com/problemes-indus
 
 Figure 2.2, INTERSTICES : <https://interstices.info/le-probleme-du-sac-a-dos/>, consulté le 26 décembre 2022.  
 
-Figure 3.4, TECHNO-SCIENCE.NET : <https://www.techno-science.net/glossaire-definition/Algorithme-de-colonies-de-fourmis-page-3.html>, consulté le 10 mars 2023.
+Figure 3.4, TECHNO-SCIENCES : <https://www.techno-science.net/glossaire-definition/Algorithme-fourmis.html>, consulté le 10 mars 2023.
