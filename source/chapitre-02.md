@@ -141,12 +141,12 @@ L'algorithme renvoie alors que la solution est
 ```{math}
     \sum Prix = 4
 ```
-En réalisant le problème à la main, on comprend qu'il faut ajouter l'bjet 2 bien que son rapport soit plus petit.
+En réalisant le problème à la main, on comprend qu'il faut ajouter l'objet 2 bien que son rapport soit plus petit.
 Ainsi, en ajoutant cet objet, tout le volume est utilisé et la solution proposée est 
 ```{math}
     \sum Prix = 750
 ```
-Ce qui démontre que l'algorithme glouton mène parfois à des solution catastrophique.
+Ce qui démontre que l'algorithme glouton mène parfois à des solution catastrophiques.
 
 ### Complexité 
 
