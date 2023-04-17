@@ -16,7 +16,7 @@ Problème du Sac à dos
     chapitre-02.md
     conclusion_sad.md
     annexes_sad.md
-    sources_sad.md
+    references.rst
 
 ..
     ..  toctree::
