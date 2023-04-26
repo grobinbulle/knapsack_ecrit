@@ -54,14 +54,14 @@ Exemple de tableau
     
 ```  
 
-Le problème étant posé, il peut être intéressant de s’attarder sur les différentes méthodes de résolutions du problème. 
+Le problème étant posé, il peut être intéressant de s’attarder sur les différentes méthodes de résolution du problème. 
 
 ## Méthodes de résolution
 Il existe ainsi plusieurs méthodes de résolution différentes. Cependant, elles possèdent toutes certains avantages et inconvénients. Il est ici question de les énumérer, de les expliquer ainsi que de souligner leurs points forts et leurs points faibles. 
 ### Méthode exacte
 Il est possible que l’on souhaite obtenir la meilleure solution, que l’on ne puisse pas obtenir mieux. La méthode exacte, ou par la force brute, consiste tout simplement à énumérer de toutes les possibilités d’arrangement, pour sélectionner la meilleure. 
 
-Pour illustrer ce principe, il est possible de raisonner par un arbre de recherche. Il est composé de nœuds, représentés par des cercles, qui représentent l’objet que l’on évalue. Les nœuds situés sur la même ligne correspondent au même objet. On passe à l’objet suivant par des arêtes. Si l’on prend l’objet dans le sac, on indique 
+Afin d'illustrer ce principe, on peut raisonner par un arbre de recherche. Il est composé de nœuds, symbolisés par des cercles, qui représentent l’objet que l’on évalue. Les nœuds situés sur la même ligne correspondent au même objet. On passe à l’objet suivant par des arêtes. Si l’on prend l’objet dans le sac, on indique 
 ```{math}
     X = 1
 ```
@@ -97,7 +97,7 @@ Pour un problème de 20 objets, on aura
 Le nombre de combinaisons augmente ainsi exponentiellement. Il semble dès lors évident que cette méthode prend énormement de temps et de mémoire si l'on s'intéresse à de nombreux objets.
 
 ### Le Branch and Bound
-Il peut être intéressant de s'appuyer sur le branch and bound afin de simplifier la recherche par rapport à la programmation dynamique. En effet, son principe consiste en la subdivision de l'arbre puis en l'évaluation de la meilleure solution comprise dans la section étudiée. Seule cette dernière est stockée jusqu'à ce que l'on trouve une solution plus optimale, les autres sont directement éliminées. Cette méthode est donc pratique pour les problèmes de tailles conséquentes et permet tout de même d'atteindre la solution optimale. De plus, il n'y a donc pas besoin de stocker chaque méthode en mémoire, ce qui permet d'importantes économies. Là où la complexité de la méthode par la force brute atteint
+Il peut être pertinent de s'appuyer sur le Branch and Bound afin de simplifier la recherche par rapport à la programmation dynamique. En effet, son principe consiste en la subdivision de l'arbre puis en l'évaluation de la meilleure solution comprise dans la section étudiée. Seule cette dernière est stockée jusqu'à ce que l'on trouve une solution plus optimale, les autres sont directement éliminées. Cette méthode est donc pratique pour les problèmes de tailles conséquentes et permet tout de même d'atteindre la solution optimale. De plus, il n'y a donc pas besoin de stocker chaque méthode en mémoire, ce qui permet d'importantes économies. Là où la complexité de la méthode par la force brute atteint
 ```{math}
     O(2^{n})
 ```
