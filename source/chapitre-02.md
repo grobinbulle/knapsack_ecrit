@@ -12,7 +12,7 @@ Comme évoqué dans la section précédente, l’algorithme glouton (ou greedy) 
 
 3) Sélectionner les objets dans l’ordre du tri et les ajouter tant que le volume maximal n’est pas dépassé. Si un objet ne peut pas être ajouté, passer au prochain jusqu’à atteindre ou se rapprocher au maximum du quota autorisé 
 
-Cette méthode est intéressante car elle apporte un gain de temps conséquent. De plus, elle permet d’avoir une solution acceptable. Enfin, elle semble aisément compréhensible et ne présente que peu de risques d’erreurs de calcul si l’on résout le problème à la main. 
+Cette méthode est intéressante car elle apporte un gain de temps et de mémoire conséquent. De plus, elle permet d’avoir une solution acceptable. Enfin, elle semble aisément compréhensible et ne présente que peu de risques d’erreurs de calcul si l’on résout le problème à la main. 
 
 En d’autres termes, si l’on trie les objets par ordre décroissant, l’algorithme contrôle cas après cas si l’objet analysé peut être accepté. Si c’est le cas, l’objet rejoint définitivement le sac à dos, sinon, il ne le rejoint pas et le programme passe à l’objet suivant. 
 

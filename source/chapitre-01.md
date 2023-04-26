@@ -104,7 +104,7 @@ Le branch and bound permet de réduire considérablement le temps de calcul et d
 ### Méthodes approchées 
 Les méthodes approchées (ou heuristiques) permettent de trouver de manière rapide une solution réalisable à un problème. Cependant, cette solution n’est pas forcément la solution optimale.
 L’objectif d’une méthode heuristique est donc de trouver une solution la plus proche possible de celle d’une
-méthode exacte tout en étant plus rapide. Plus le résultat obtenu est proche de la solution optimale,
+méthode exacte tout en étant plus rapide et en n'occupant qu'un petit espace mémoire. Plus le résultat obtenu est proche de la solution optimale,
 meilleure est l’heuristique.
 
 Sur les nombreux algorithmes basés sur la méthode approchée, l’algorithme glouton demeure comme l’un des plus populaire. C’est pourquoi je m’attarde sur ce dernier dans le prochain chapitre de ce travail. 
