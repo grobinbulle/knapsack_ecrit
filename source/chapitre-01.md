@@ -96,11 +96,12 @@ Pour un problème de 20 objets, on aura
 ```
 Le nombre de combinaisons augmente ainsi exponentiellement. Il semble dès lors évident que cette méthode prend énormement de temps et de mémoire si l'on s'intéresse à de nombreux objets.
 
-Il peut être intéressant de s'appuyer sur le branch and bound afin de simplifier la recherche. En effet, son principe consiste en la subdivision de l'arbre puis en l'évaluation de la meilleure solution comprise dans la section étudiée. Seule cette dernière est stockée jusqu'à ce que l'on trouve une solution plus optimale, les autres sont directement éliminées. Cette méthode est donc pratique pour les problèmes de tailles conséquentes et permet tout de même d'atteindre la solution optimale. De plus, il n'y a donc pas besoin de stocker chaque méthode en mémoire, ce qui permet d'importantes économies. Là où la complexité de la méthode par la force brute atteint
+### Le Branch and Bound
+Il peut être intéressant de s'appuyer sur le branch and bound afin de simplifier la recherche par rapport à la programmation dynamique. En effet, son principe consiste en la subdivision de l'arbre puis en l'évaluation de la meilleure solution comprise dans la section étudiée. Seule cette dernière est stockée jusqu'à ce que l'on trouve une solution plus optimale, les autres sont directement éliminées. Cette méthode est donc pratique pour les problèmes de tailles conséquentes et permet tout de même d'atteindre la solution optimale. De plus, il n'y a donc pas besoin de stocker chaque méthode en mémoire, ce qui permet d'importantes économies. Là où la complexité de la méthode par la force brute atteint
 ```{math}
     O(2^{n})
 ```
-Le branch and bound permet de réduire considérablement le temps de calcul et d'obtenir des solutions plus rapidement. Bien que la complexité de cette dernière méthode soit également exponentielle dans le pire des cas, elle est généralement beaucoup plus faible que celle de la méthode par force brute.
+Le B&B permet de réduire considérablement le temps de calcul et d'obtenir des solutions plus rapidement. Bien que la complexité de cette dernière méthode soit également exponentielle dans le pire des cas, elle est généralement beaucoup plus faible que celle de la méthode par force brute.
 ### Méthodes approchées 
 Les méthodes approchées (ou heuristiques) permettent de trouver de manière rapide une solution réalisable à un problème. Cependant, cette solution n’est pas forcément la solution optimale.
 L’objectif d’une méthode heuristique est donc de trouver une solution la plus proche possible de celle d’une
